@@ -1,0 +1,269 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* Reset và font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Taskbar */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #f55;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: #f55;
+}
+
+/* Form styles */
+form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #f55;
+  outline: none;
+}
+
+form button {
+  background-color: #f55;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+form button:hover {
+  background-color: #d33;
+}
+
+
+
+/* Recipe card */
+.recipe-card {
+  background: white;
+
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recipe-card .badge {
+  background-color: #f55;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+/* Avatar */
+img {
+  width: 100%;
+  height: 100%;
+
+
+}
+
+/* ----------------------------------------------------------------------------- */
+.share-buttons a,
+.share-buttons button {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #0077cc;
+  font-size: 0.9rem;
+}
+
+.share-buttons a:hover,
+.share-buttons button:hover {
+  text-decoration: underline;
+}
+
+.copied-msg {
+  margin-left: 10px;
+  color: green;
+}
+
+/* ---------------------------------MealPlanner-------------------------------------------- */
+
+
+
+/* ---------------------------------NutritionInfo-------------------------------------------- */
+.nutrition-info {
+  background: #f1f1f1;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.nutrition-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nutrition-info li {
+  margin: 0.25rem 0;
+}
+
+/* -----------------------------------pinterest------------------------------------------ */
+
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.recipe-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.recipe-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* === Basic Layout === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 25%;
+    padding: 1rem;
+  }
+
+  .main-content {
+    width: 75%;
+    padding: 1rem;
+  }
+}
+
+.recipe-card {
+  border: 1px solid #ccc;
+
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: white;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .recipe-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

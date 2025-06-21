@@ -1,0 +1,87 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.theme-popup-wrapper {
+    position: relative;
+    display: inline-block;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Toggle Button */
+.theme-popup-toggle {
+    background: var(--bg);
+    color: var(--text);
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+
+.theme-popup-toggle:hover {
+    background: #f0f0f0;
+}
+
+/* Popup */
+.theme-popup.small {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+/* Grid */
+.theme-options-grid.small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Theme Option */
+.theme-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 6px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.theme-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.theme-option.active {
+    border-color: #4caf50;
+}
+
+/* Icon Animal Emoji */
+.theme-icon {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.theme-name {
+    font-size: 0.85rem;
+    color: inherit;
+}

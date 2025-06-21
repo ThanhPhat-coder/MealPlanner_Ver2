@@ -1,0 +1,40 @@
+.meal-planner-container {
+    padding: 20px;
+}
+
+.available-recipes ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.available-recipes li {
+    margin-bottom: 8px;
+}
+
+.calendar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.day-column {
+    flex: 1;
+    min-width: 180px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 12px;
+    min-height: 200px;
+}
+
+.meal-item {
+    user-select: none;
+}
+
+.delete-icon {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+}

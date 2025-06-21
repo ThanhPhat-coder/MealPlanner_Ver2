@@ -1,0 +1,1304 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Spaghetti Carbonara",
+      "description": "Spaghetti Carbonara is a delicious and popular dish.",
+      "ingredients": [
+        "Onion",
+        "Lettuce",
+        "Pepper",
+        "Olive Oil",
+        "Eggs"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 22,
+      "servings": 6,
+      "category": "Dessert",
+      "rating": 3.3,
+      "image": "https://media.istockphoto.com/id/1142391463/photo/pasta-carbonara.jpg?s=612x612&w=0&k=20&c=7gO9mReNFzY10qsmu_X4_LZ45-UcVPtzpHF-DOFp6Cc=",
+      "comments": [
+        {
+          "username": "user3",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-04T06:41:46.563149"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Grilled Chicken Salad",
+      "description": "Grilled Chicken Salad is a delicious and popular dish.",
+      "ingredients": [
+        "Beef",
+        "Lettuce",
+        "Bread",
+        "Pepper",
+        "Olive Oil"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 14,
+      "servings": 4,
+      "category": "Snack",
+      "rating": 4.2,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2x181MXKR28vfcaggq7RbSUVlQZl3kiAVwA&s",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-27T06:41:46.563200"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Beef Stroganoff",
+      "description": "Beef Stroganoff is a delicious and popular dish.",
+      "ingredients": [
+        "Eggs",
+        "Pepper",
+        "Olive Oil",
+        "Onion",
+        "Cheese"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 31,
+      "servings": 2,
+      "category": "Dinner",
+      "rating": 3.6,
+      "image": "https://www.shutterstock.com/image-photo/how-make-ground-beef-stroganoff-600nw-2414936563.jpg",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-06-20T06:41:46.563223"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Vegetable Stir Fry",
+      "description": "Vegetable Stir Fry is a delicious and popular dish.",
+      "ingredients": [
+        "Milk",
+        "Cheese",
+        "Salt",
+        "Pepper",
+        "Flour"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 49,
+      "servings": 3,
+      "category": "Lunch",
+      "rating": 3.7,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZl1RBjUVHZ7PylBDMVdVi-PvlbQ28cxb0og&s",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-23T06:41:46.563236"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Chicken Curry",
+      "description": "Chicken Curry is a delicious and popular dish.",
+      "ingredients": [
+        "Milk",
+        "Beef",
+        "Garlic",
+        "Flour",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 46,
+      "servings": 5,
+      "category": "Snack",
+      "rating": 4.7,
+      "image": "https://www.shutterstock.com/image-photo/homemade-chicken-curry-pan-wooden-600nw-2476480287.jpg",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-24T06:41:46.563248"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Tomato Soup",
+      "description": "Tomato Soup is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Cheese",
+        "Chicken",
+        "Tomato",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 40,
+      "servings": 6,
+      "category": "Dessert",
+      "rating": 4.1,
+      "image": "https://thejewishkitchen.com/wp-content/uploads/2016/10/tomato-soup.jpg",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-30T06:41:46.563269"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Pancakes",
+      "description": "Pancakes is a delicious and popular dish.",
+      "ingredients": [
+        "Tomato",
+        "Chicken",
+        "Pasta",
+        "Bread",
+        "Onion"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 40,
+      "servings": 3,
+      "category": "Snack",
+      "rating": 3.9,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDY6K3jY_WrinFezxwRDenPAJ9AU7kxmLexw&s",
+      "comments": [
+        {
+          "username": "user2",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-05T06:41:46.563288"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Omelette",
+      "description": "Omelette is a delicious and popular dish.",
+      "ingredients": [
+        "Eggs",
+        "Pasta",
+        "Flour",
+        "Lettuce",
+        "Bread"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 20,
+      "servings": 1,
+      "category": "Snack",
+      "rating": 4.1,
+      "image": "https://img.freepik.com/premium-photo/3d-rendered-delicious-platter-omelet-recipe-tomato-onion-closeup-shot_1066261-104969.jpg",
+      "comments": [
+        {
+          "username": "user3",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-30T06:41:46.563317"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Caesar Salad",
+      "description": "Caesar Salad is a delicious and popular dish.",
+      "ingredients": [
+        "Garlic",
+        "Milk",
+        "Olive Oil",
+        "Beef",
+        "Onion"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 19,
+      "servings": 2,
+      "category": "Dessert",
+      "rating": 3.9,
+      "image": "https://www.shutterstock.com/image-photo/caesar-salad-paper-bowl-take-600w-1178418982.jpg",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-05-31T06:41:46.563334"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Fried Rice",
+      "description": "Fried Rice is a delicious and popular dish.",
+      "ingredients": [
+        "Pepper",
+        "Onion",
+        "Lettuce",
+        "Milk",
+        "Olive Oil"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 20,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 3.3,
+      "image": "https://static.vecteezy.com/system/resources/previews/042/268/230/non_2x/ai-generated-3d-rendering-of-a-fried-rice-in-a-plate-or-bowl-on-transparent-background-ai-generated-png.png",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-05-27T06:41:46.563348"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Tuna Sandwich",
+      "description": "Tuna Sandwich is a delicious and popular dish.",
+      "ingredients": [
+        "Salt",
+        "Onion",
+        "Garlic",
+        "Olive Oil",
+        "Chicken"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 28,
+      "servings": 6,
+      "category": "Breakfast",
+      "rating": 4.5,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSORdFd0hdfzkZ6Lv3in8pTg9uoj-J18tImrA&s",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-05-29T06:41:46.563359"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Mushroom Risotto",
+      "description": "Mushroom Risotto is a delicious and popular dish.",
+      "ingredients": [
+        "Beef",
+        "Bread",
+        "Olive Oil",
+        "Salt",
+        "Garlic"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 28,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 4.2,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8q1iNO7spgUjOf1LPLpiTfLXk1HcaW_EG-g&s",
+      "comments": [
+        {
+          "username": "user7",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-15T06:41:46.563370"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Greek Salad",
+      "description": "Greek Salad is a delicious and popular dish.",
+      "ingredients": [
+        "Salt",
+        "Milk",
+        "Pepper",
+        "Flour",
+        "Onion"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 23,
+      "servings": 4,
+      "category": "Dinner",
+      "rating": 3.8,
+      "image": "https://www.wellplated.com/wp-content/uploads/2024/04/how-to-make-easy-greek-salad.jpg",
+      "comments": [
+        {
+          "username": "user4",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-06-08T06:41:46.563381"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Lasagna",
+      "description": "Lasagna is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Eggs",
+        "Pepper",
+        "Salt",
+        "Flour"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 39,
+      "servings": 1,
+      "category": "Lunch",
+      "rating": 3.1,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMWAZkJZgbITWknPysUnQ5tg4o4HArXfxK8A&s",
+      "comments": [
+        {
+          "username": "user4",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-06-20T06:41:46.563391"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Fish Tacos",
+      "description": "Fish Tacos is a delicious and popular dish.",
+      "ingredients": [
+        "Flour",
+        "Beef",
+        "Cheese",
+        "Bread",
+        "Milk"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 54,
+      "servings": 3,
+      "category": "Lunch",
+      "rating": 4.6,
+      "image": "https://thumbs.dreamstime.com/b/generation-alpha-food-menu-beyond-meat-tacos-d-printed-shells-lab-grown-beef-avocado-foam-377193402.jpg",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-18T06:41:46.563402"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "BBQ Ribs",
+      "description": "BBQ Ribs is a delicious and popular dish.",
+      "ingredients": [
+        "Onion",
+        "Lettuce",
+        "Flour",
+        "Cheese",
+        "Milk"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 24,
+      "servings": 2,
+      "category": "Dessert",
+      "rating": 4,
+      "image": "https://p.turbosquid.com/ts-thumb/kL/W1N6Vx/dH/preview_1/jpg/1721603342/600x600/fit_q87/5049316f0e63e0f5b6b337c9f7071817a1530ca9/preview_1.jpg",
+      "comments": [
+        {
+          "username": "user3",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-06-15T06:41:46.563414"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Baked Ziti",
+      "description": "Baked Ziti is a delicious and popular dish.",
+      "ingredients": [
+        "Flour",
+        "Pepper",
+        "Beef",
+        "Onion",
+        "Cheese"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 12,
+      "servings": 1,
+      "category": "Breakfast",
+      "rating": 3.1,
+      "image": "https://t3.ftcdn.net/jpg/09/31/12/60/360_F_931126025_OtiqOdpBbV5PhMEvGaJ4jMbG2UQnMlw1.jpg",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-06-06T06:41:46.563430"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Clam Chowder",
+      "description": "Clam Chowder is a delicious and popular dish.",
+      "ingredients": [
+        "Onion",
+        "Bread",
+        "Milk",
+        "Cheese",
+        "Olive Oil"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 28,
+      "servings": 1,
+      "category": "Lunch",
+      "rating": 3.9,
+      "image": "https://content.instructables.com/FZ9/ZKAR/KKV5TYYX/FZ9ZKARKKV5TYYX.jpg?auto=webp",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-26T06:41:46.563560"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Pulled Pork Sandwich",
+      "description": "Pulled Pork Sandwich is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Cheese",
+        "Eggs",
+        "Tomato",
+        "Chicken"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 21,
+      "servings": 6,
+      "category": "Breakfast",
+      "rating": 3,
+      "image": "https://t3.ftcdn.net/jpg/01/58/75/40/360_F_158754004_yHmGBT0sIiJLEYE1PtMCpIkYhlzI8sQx.jpg",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-06-01T06:41:46.563577"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Avocado Toast",
+      "description": "Avocado Toast is a delicious and popular dish.",
+      "ingredients": [
+        "Pepper",
+        "Chicken",
+        "Eggs",
+        "Cheese",
+        "Lettuce"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 35,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 4.9,
+      "image": "https://www.renderhub.com/thedazking/avocado-toast/avocado-toast-01.jpg",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-05-22T06:41:46.563596"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "title": "French Toast",
+      "description": "French Toast is a delicious and popular dish.",
+      "ingredients": [
+        "Olive Oil",
+        "Pasta",
+        "Pepper",
+        "Cheese",
+        "Flour"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 36,
+      "servings": 2,
+      "category": "Dinner",
+      "rating": 3.8,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhsyOYbJIYL-JYhKLSn8hJJ2lSHe9tt0l7Q&s",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-12T06:41:46.563611"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "title": "Shrimp Scampi",
+      "description": "Shrimp Scampi is a delicious and popular dish.",
+      "ingredients": [
+        "Pasta",
+        "Milk",
+        "Garlic",
+        "Beef",
+        "Pepper"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 59,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXtDtrSrLLRaK6d_Yx_L3A9dYH7w1TjvR0QAxglOAUZSp-Yk0bUhp3yo4j9LXMhCmyE0&usqp=CAU",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-10T06:41:46.563627"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "title": "Stuffed Peppers",
+      "description": "Stuffed Peppers is a delicious and popular dish.",
+      "ingredients": [
+        "Tomato",
+        "Milk",
+        "Beef",
+        "Cheese",
+        "Lettuce"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 44,
+      "servings": 6,
+      "category": "Dessert",
+      "rating": 4.2,
+      "image": "https://t3.ftcdn.net/jpg/01/71/94/78/360_F_171947893_igJJruy5RRFvWippKtp7s5r346R13Tob.jpg",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-26T06:41:46.563641"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "title": "Eggplant Parmesan",
+      "description": "Eggplant Parmesan is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Milk",
+        "Pepper",
+        "Salt",
+        "Olive Oil"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 19,
+      "servings": 4,
+      "category": "Lunch",
+      "rating": 4.3,
+      "image": "https://t3.ftcdn.net/jpg/14/57/46/02/360_F_1457460291_B7dzepzdHb35H7hp3FcBHDFvpEHFnQL2.jpg",
+      "comments": [
+        {
+          "username": "user1",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-06-18T06:41:46.563719"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "title": "Chicken Alfredo",
+      "description": "Chicken Alfredo is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Chicken",
+        "Onion",
+        "Beef",
+        "Milk"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 46,
+      "servings": 4,
+      "category": "Snack",
+      "rating": 4.9,
+      "image": "https://www.shutterstock.com/image-photo/fettuccine-alfredo-chicken-served-bowl-600w-2502135175.jpg",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-06-08T06:41:46.563744"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Falafel Wrap",
+      "description": "Falafel Wrap is a delicious and popular dish.",
+      "ingredients": [
+        "Tomato",
+        "Eggs",
+        "Pepper",
+        "Bread",
+        "Olive Oil"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 13,
+      "servings": 5,
+      "category": "Snack",
+      "rating": 3.3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaooljOt0voJYwt_5jplpVBW601z5SAhD3Xw&s",
+      "comments": [
+        {
+          "username": "user8",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-05T06:41:46.563764"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Burrito Bowl",
+      "description": "Burrito Bowl is a delicious and popular dish.",
+      "ingredients": [
+        "Milk",
+        "Salt",
+        "Beef",
+        "Pasta",
+        "Flour"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 42,
+      "servings": 4,
+      "category": "Dessert",
+      "rating": 3.7,
+      "image": "https://www.shutterstock.com/image-photo/vegan-burrito-bowl-filled-rice-600nw-2493432903.jpg",
+      "comments": [
+        {
+          "username": "user1",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-06-11T06:41:46.563777"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "title": "Beef Tacos",
+      "description": "Beef Tacos is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Tomato",
+        "Beef",
+        "Bread",
+        "Cheese"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 13,
+      "servings": 5,
+      "category": "Dessert",
+      "rating": 3.6,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8S7rkHh_II4DS9-SBZZnYkqx7svQ8EMRRGw&s",
+      "comments": [
+        {
+          "username": "user4",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-06-20T06:41:46.563788"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "title": "Chicken Noodle Soup",
+      "description": "Chicken Noodle Soup is a delicious and popular dish.",
+      "ingredients": [
+        "Onion",
+        "Cheese",
+        "Tomato",
+        "Eggs",
+        "Bread"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 55,
+      "servings": 1,
+      "category": "Dinner",
+      "rating": 3.6,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBJLp05sooP-YobrdUNwpFy3iOeMYwUJRRrONUh1DVY0zGYdnRynm2Pw5WfkwbzmxG4ao&usqp=CAU",
+      "comments": [
+        {
+          "username": "user9",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-29T06:41:46.563808"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "Veggie Burger",
+      "description": "Veggie Burger is a delicious and popular dish.",
+      "ingredients": [
+        "Olive Oil",
+        "Lettuce",
+        "Eggs",
+        "Milk",
+        "Onion"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 44,
+      "servings": 4,
+      "category": "Breakfast",
+      "rating": 4.8,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDLxQXLKPrgqowXXza5f1x8lAOtb5ngMR1Yg&s",
+      "comments": [
+        {
+          "username": "user1",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-05-29T06:41:46.563821"
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "title": "Mac and Cheese",
+      "description": "Mac and Cheese is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Pasta",
+        "Milk",
+        "Onion",
+        "Chicken"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 42,
+      "servings": 4,
+      "category": "Snack",
+      "rating": 3.8,
+      "image": "https://www.allrecipes.com/thmb/MkbGgNcGadAWdYw0aRZbo8WapHM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/237311-slow-cooker-mac-and-cheese-DDMFS-4x3-9b4a15f2c3344c1da22b034bc3b35683.jpg",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-06-01T06:41:46.563832"
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "title": "Quiche Lorraine",
+      "description": "Quiche Lorraine is a delicious and popular dish.",
+      "ingredients": [
+        "Pasta",
+        "Beef",
+        "Bread",
+        "Onion",
+        "Salt"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 20,
+      "servings": 3,
+      "category": "Snack",
+      "rating": 3.1,
+      "image": "https://foodnouveau.com/wp-content/uploads/2019/10/Quiche_Lorraine_03_tiny.jpg",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-14T06:41:46.563843"
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "title": "Minestrone Soup",
+      "description": "Minestrone Soup is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Eggs",
+        "Garlic",
+        "Milk",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 44,
+      "servings": 5,
+      "category": "Snack",
+      "rating": 3.5,
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2021/11/minestrone-soup-500x500.jpg",
+      "comments": [
+        {
+          "username": "user3",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-31T06:41:46.563855"
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "title": "Lamb Chops",
+      "description": "Lamb Chops is a delicious and popular dish.",
+      "ingredients": [
+        "Flour",
+        "Milk",
+        "Pasta",
+        "Olive Oil",
+        "Pepper"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 56,
+      "servings": 6,
+      "category": "Lunch",
+      "rating": 4.3,
+      "image": "https://urbanfarmandkitchen.com/wp-content/uploads/2024/11/marinated-greek-lamb-chops-18.jpg",
+      "comments": [
+        {
+          "username": "user9",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-08T06:41:46.563873"
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "title": "Chicken Wings",
+      "description": "Chicken Wings is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Bread",
+        "Garlic",
+        "Chicken",
+        "Pepper"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 43,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 3.4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLLs4olCCUhtlWLdZwHaGWiYexPo0azRSOPA&s",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-05-28T06:41:46.563890"
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "title": "Tofu Stir Fry",
+      "description": "Tofu Stir Fry is a delicious and popular dish.",
+      "ingredients": [
+        "Tomato",
+        "Chicken",
+        "Eggs",
+        "Pepper",
+        "Bread"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 48,
+      "servings": 1,
+      "category": "Dessert",
+      "rating": 3.3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNEh29c1wRgNgSABiuPMhttIjSCWPT_CFGow&s",
+      "comments": [
+        {
+          "username": "user2",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-27T06:41:46.563905"
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "title": "Sushi Rolls",
+      "description": "Sushi Rolls is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Salt",
+        "Chicken",
+        "Pasta",
+        "Tomato"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 55,
+      "servings": 3,
+      "category": "Snack",
+      "rating": 4.4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXmQPxlLyZQcqiT333Vfdslhb7Bey9Kw6MQQ&s",
+      "comments": [
+        {
+          "username": "user9",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-15T06:41:46.563917"
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "title": "Pad Thai",
+      "description": "Pad Thai is a delicious and popular dish.",
+      "ingredients": [
+        "Beef",
+        "Lettuce",
+        "Pepper",
+        "Olive Oil",
+        "Milk"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 59,
+      "servings": 1,
+      "category": "Dessert",
+      "rating": 4.5,
+      "image": "https://www.seriouseats.com/thmb/gLZ3ZlKXVTGpgspZvvS8Afnw2TA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20250214-SEA-PadThai-AmandaSuarez-hero-4251c730d61a40ba935f2d43153d6862.jpg",
+      "comments": [
+        {
+          "username": "user1",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-06-13T06:41:46.563930"
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "title": "Pho",
+      "description": "Pho is a delicious and popular dish.",
+      "ingredients": [
+        "Salt",
+        "Olive Oil",
+        "Pepper",
+        "Eggs",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 29,
+      "servings": 3,
+      "category": "Snack",
+      "rating": 4.8,
+      "image": "https://www.onceuponachef.com/images/2023/02/pho-500x375.jpg",
+      "comments": [
+        {
+          "username": "user6",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-31T06:41:46.563946"
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "title": "Ramen",
+      "description": "Ramen is a delicious and popular dish.",
+      "ingredients": [
+        "Flour",
+        "Bread",
+        "Chicken",
+        "Cheese",
+        "Onion"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 25,
+      "servings": 5,
+      "category": "Breakfast",
+      "rating": 4.7,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXRd9gcaiqNof-BnVXokoued9zpvRrigJag&s",
+      "comments": [
+        {
+          "username": "user3",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-01T06:41:46.563964"
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "title": "Cobb Salad",
+      "description": "Cobb Salad is a delicious and popular dish.",
+      "ingredients": [
+        "Chicken",
+        "Beef",
+        "Onion",
+        "Garlic",
+        "Tomato"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 41,
+      "servings": 6,
+      "category": "Breakfast",
+      "rating": 5,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJd8n3crqtYTRQhRbaM_k1_83_76QG_sBFFw&s",
+      "comments": [
+        {
+          "username": "user9",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-06-20T06:41:46.563976"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "title": "Chili Con Carne",
+      "description": "Chili Con Carne is a delicious and popular dish.",
+      "ingredients": [
+        "Cheese",
+        "Tomato",
+        "Salt",
+        "Eggs",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 50,
+      "servings": 4,
+      "category": "Lunch",
+      "rating": 4.7,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRj8y0V5H3tgDoZBU_12T9qz-2VZlGzP_H_g&s",
+      "comments": [
+        {
+          "username": "user7",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-07T06:41:46.563998"
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "title": "Gnocchi",
+      "description": "Gnocchi is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Olive Oil",
+        "Beef",
+        "Onion",
+        "Salt"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 11,
+      "servings": 3,
+      "category": "Dessert",
+      "rating": 3.8,
+      "image": "https://www.kingarthurbaking.com/sites/default/files/2025-02/Potato-Gnocchi_2025_Lifestyle_ALT_H_045.jpg",
+      "comments": [
+        {
+          "username": "user9",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-06-19T06:41:46.564010"
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "title": "Enchiladas",
+      "description": "Enchiladas is a delicious and popular dish.",
+      "ingredients": [
+        "Bread",
+        "Salt",
+        "Tomato",
+        "Pepper",
+        "Lettuce"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 13,
+      "servings": 2,
+      "category": "Dessert",
+      "rating": 3.2,
+      "image": "https://www.everythingerica.com/wp-content/uploads/2014/07/Enchiladas.jpg.jpg",
+      "comments": [
+        {
+          "username": "user5",
+          "profilePic": "",
+          "text": "Great dish!",
+          "timestamp": "2025-05-30T06:41:46.564020"
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "title": "Meatloaf",
+      "description": "Meatloaf is a delicious and popular dish.",
+      "ingredients": [
+        "Olive Oil",
+        "Garlic",
+        "Eggs",
+        "Onion",
+        "Lettuce"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 25,
+      "servings": 4,
+      "category": "Lunch",
+      "rating": 3.8,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR02VKdToosuJ3eEJDfeA1SFQ9Repq9Y2V_dg&s",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-06-11T06:41:46.564031"
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "title": "Croque Monsieur",
+      "description": "Croque Monsieur is a delicious and popular dish.",
+      "ingredients": [
+        "Tomato",
+        "Eggs",
+        "Flour",
+        "Olive Oil",
+        "Pepper"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 55,
+      "servings": 2,
+      "category": "Breakfast",
+      "rating": 3.1,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/croque-monsieur-66a219aa5f0b2.jpg?crop=1xw:0.8198221757322176xh;center,top",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-05-29T06:41:46.564041"
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "title": "Shakshuka",
+      "description": "Shakshuka is a delicious and popular dish.",
+      "ingredients": [
+        "Chicken",
+        "Garlic",
+        "Beef",
+        "Lettuce",
+        "Pasta"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 20,
+      "servings": 4,
+      "category": "Lunch",
+      "rating": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUVzWUqWYCALylNK9NuUZ2-kFYo5LZG4db7g&s",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Loved it!",
+          "timestamp": "2025-05-26T06:41:46.564052"
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "title": "Beef Bulgogi",
+      "description": "Beef Bulgogi is a delicious and popular dish.",
+      "ingredients": [
+        "Salt",
+        "Onion",
+        "Eggs",
+        "Lettuce",
+        "Flour"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 55,
+      "servings": 3,
+      "category": "Lunch",
+      "rating": 3.4,
+      "image": "https://static01.nyt.com/images/2023/11/14/multimedia/JM-Bulgogi-qmfj/JM-Bulgogi-qmfj-superJumbo.jpg",
+      "comments": [
+        {
+          "username": "user2",
+          "profilePic": "",
+          "text": "Too spicy for me.",
+          "timestamp": "2025-05-31T06:41:46.564062"
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "title": "Bibimbap",
+      "description": "Bibimbap is a delicious and popular dish.",
+      "ingredients": [
+        "Milk",
+        "Beef",
+        "Cheese",
+        "Garlic",
+        "Tomato"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 54,
+      "servings": 4,
+      "category": "Breakfast",
+      "rating": 4.4,
+      "image": "https://www.recipetineats.com/tachyon/2019/05/Bibimbap_3.jpg",
+      "comments": [
+        {
+          "username": "user7",
+          "profilePic": "",
+          "text": "Easy and fast!",
+          "timestamp": "2025-06-12T06:41:46.564073"
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "title": "Katsu Curry",
+      "description": "Katsu Curry is a delicious and popular dish.",
+      "ingredients": [
+        "Lettuce",
+        "Onion",
+        "Tomato",
+        "Milk",
+        "Cheese"
+      ],
+      "instructions": "Step 1: Prepare ingredients.\nStep 2: Cook accordingly.\nStep 3: Serve hot.",
+      "cookingTime": 46,
+      "servings": 3,
+      "category": "Lunch",
+      "rating": 4.1,
+      "image": "https://japan.recipetineats.com/wp-content/uploads/2021/12/Katsu_Curry_7011bsq.jpg",
+      "comments": [
+        {
+          "username": "user10",
+          "profilePic": "",
+          "text": "Would cook again.",
+          "timestamp": "2025-05-28T06:41:46.564083"
+        }
+      ]
+    }
+  ]
+}

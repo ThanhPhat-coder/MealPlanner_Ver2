@@ -1,0 +1,169 @@
+.profile-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.profile-sidebar {
+    width: 220px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.profile-sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.profile-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #444;
+    transition: background 0.2s ease;
+}
+
+.profile-sidebar li:hover,
+.profile-sidebar li.active {
+    background-color: #e0f2f1;
+    color: #00796b;
+}
+
+/* Content */
+.profile-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Horizontal layout for Profile tab */
+.profile-row-horizontal {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Avatar block */
+.profile-avatar-box {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-avatar-box input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.avatar-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 3px solid #4CAF50;
+}
+
+/* Info block */
+.profile-info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row input,
+.form-row textarea {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.icon {
+    color: #4CAF50;
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+/* Toggle */
+.toggle-row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+/* Button */
+.save-button {
+    align-self: flex-start;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #388e3c;
+}
