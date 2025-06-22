@@ -33,7 +33,7 @@ export default function CreateRecipe() {
 
     return (
         <div>
-            <h2>➕ Add New Recipe</h2>
+
             <RecipeForm onSave={saveRecipe} />
         </div>
     );

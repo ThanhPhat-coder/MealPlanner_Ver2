@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { FaTwitter, FaFacebook, FaLink } from 'react-icons/fa';
 import './ShareButtons.css';
 
 export default function ShareButtons({ recipeId }) {
     const [copied, setCopied] = useState(false);
-
     const shareUrl = `${window.location.origin}/recipes/${recipeId}`;
 
     const copyLink = () => {
@@ -21,7 +21,7 @@ export default function ShareButtons({ recipeId }) {
                 rel="noopener noreferrer"
                 className="share-btn twitter"
             >
-                🐦 Tweet
+                <FaTwitter /> <span>Twitter</span>
             </a>
             <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
@@ -29,12 +29,11 @@ export default function ShareButtons({ recipeId }) {
                 rel="noopener noreferrer"
                 className="share-btn facebook"
             >
-                📘 Share
+                <FaFacebook /> <span>Facebook</span>
             </a>
             <button onClick={copyLink} className="share-btn copy">
-                🔗 Copy Link
+                <FaLink /> <span>{copied ? 'Copied!' : 'Copy Link'}</span>
             </button>
-            {copied && <span className="copy-msg">✅ Copied!</span>}
         </div>
     );
 }

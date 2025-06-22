@@ -167,3 +167,106 @@ textarea {
 .save-button:hover {
     background-color: #388e3c;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .profile-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .profile-sidebar li {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .profile-content {
+        padding: 24px;
+    }
+
+    .profile-row-horizontal {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .avatar-img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .icon {
+        align-self: flex-start;
+    }
+
+    .toggle-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .save-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Ẩn footer trên mobile nhỏ và mở rộng nội dung chính */
+@media (max-width: 480px) {
+    footer {
+        display: none !important;
+    }
+
+    .profile-layout {
+        margin: 16px auto;
+        border-radius: 10px;
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+
+
+    .profile-content {
+        padding: 16px;
+        width: 100%;
+    }
+
+    .profile-content h2 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .form-row input,
+    .form-row textarea {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .save-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* Dark Mode */

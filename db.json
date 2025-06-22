@@ -23,6 +23,18 @@
           "profilePic": "",
           "text": "Loved it!",
           "timestamp": "2025-06-04T06:41:46.563149"
+        },
+        {
+          "username": "admin",
+          "profilePic": "",
+          "text": "waa!",
+          "timestamp": "6/21/2025, 5:01:15 PM"
+        },
+        {
+          "username": "admin",
+          "profilePic": "",
+          "text": "yea",
+          "timestamp": "6/22/2025, 5:37:32 PM"
         }
       ]
     },
@@ -75,8 +87,15 @@
           "profilePic": "",
           "text": "Too spicy for me.",
           "timestamp": "2025-06-20T06:41:46.563223"
+        },
+        {
+          "username": "admin",
+          "profilePic": "",
+          "text": "wow!",
+          "timestamp": "6/22/2025, 4:08:04 PM"
         }
-      ]
+      ],
+      "favorite": true
     },
     {
       "id": "4",
@@ -101,8 +120,15 @@
           "profilePic": "",
           "text": "Loved it!",
           "timestamp": "2025-05-23T06:41:46.563236"
+        },
+        {
+          "username": "admin",
+          "profilePic": "",
+          "text": "nice!!",
+          "timestamp": "6/22/2025, 5:00:42 PM"
         }
-      ]
+      ],
+      "favorite": true
     },
     {
       "id": "5",
@@ -128,7 +154,8 @@
           "text": "Loved it!",
           "timestamp": "2025-05-24T06:41:46.563248"
         }
-      ]
+      ],
+      "favorite": true
     },
     {
       "id": "6",
@@ -179,6 +206,12 @@
           "profilePic": "",
           "text": "Easy and fast!",
           "timestamp": "2025-06-05T06:41:46.563288"
+        },
+        {
+          "username": "admin",
+          "profilePic": "",
+          "text": "yeah!",
+          "timestamp": "6/22/2025, 5:16:28 PM"
         }
       ]
     },
@@ -224,7 +257,7 @@
       "servings": 2,
       "category": "Dessert",
       "rating": 3.9,
-      "image": "https://www.shutterstock.com/image-photo/caesar-salad-paper-bowl-take-600w-1178418982.jpg",
+      "image": "https://t4.ftcdn.net/jpg/02/02/48/35/360_F_202483549_3cDh8uaQ5OJG9GUDsp9YKSQNt69rjucc.jpg",
       "comments": [
         {
           "username": "user10",
@@ -232,7 +265,8 @@
           "text": "Easy and fast!",
           "timestamp": "2025-05-31T06:41:46.563334"
         }
-      ]
+      ],
+      "favorite": true
     },
     {
       "id": "10",

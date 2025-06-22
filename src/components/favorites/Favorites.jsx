@@ -4,13 +4,11 @@ import RecipeItem from "../components/recipes/RecipeItem";
 export default function Favorites() {
     const [recipes, setRecipes] = useState([]);
 
-    // Load từ localStorage
     useEffect(() => {
         const all = JSON.parse(localStorage.getItem("recipes")) || [];
-        setRecipes(all);
+        setRecipes(all.filter(r => r.favorite));
     }, []);
 
-    // Toggle favorite trong cả danh sách
     const toggleFavorite = (id) => {
         const updated = recipes.map(r =>
             r.id === id ? { ...r, favorite: !r.favorite } : r
@@ -19,23 +17,20 @@ export default function Favorites() {
         localStorage.setItem("recipes", JSON.stringify(updated));
     };
 
-    // Lọc để chỉ hiện recipe đã favorite
-    const favoriteRecipes = recipes.filter(r => r.favorite);
-
     return (
         <div>
             <h2>❤️ Favorite Recipes</h2>
             <div className="recipe-grid">
-                {favoriteRecipes.length ? (
-                    favoriteRecipes.map(r => (
+                {recipes.length ? (
+                    recipes.map(r => (
                         <RecipeItem
+                            key={r.id}
                             recipe={r}
-                            onFavorite={onFavorite} // ✅ phải là "onFavorite"
-                            onRate={rateRecipe}
-                            onEdit={setEditing}
-                            onDelete={deleteRecipe}
+                            onToggleFavorite={toggleFavorite}
+                            onRate={() => { }}
+                            onEdit={() => { }}
+                            onDelete={() => { }}
                         />
-
                     ))
                 ) : (
                     <p>No favorites yet!</p>

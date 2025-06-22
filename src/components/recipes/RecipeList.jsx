@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import RecipeForm from './RecipeForm';
 import RecipeItem from './RecipeItem';
-import { AuthContext } from '../auth/AuthContext'; // Cập nhật đúng path nếu khác
+import { AuthContext } from '../auth/AuthContext';
 
 export default function RecipeList() {
     const [recipes, setRecipes] = useState(() => JSON.parse(localStorage.getItem('recipes')) || []);
@@ -83,7 +83,6 @@ export default function RecipeList() {
         }
     };
 
-
     const deleteRecipe = (recipe) => {
         fetch(`http://localhost:3001/recipes/${recipe.id}`, {
             method: 'DELETE'
@@ -96,12 +95,29 @@ export default function RecipeList() {
             .catch(() => alert('❌ Failed to delete recipe'));
     };
 
-    const toggleFavorite = (id) => {
-        const updated = recipes.map(r =>
-            r.id === id ? { ...r, favorite: !r.favorite } : r
-        );
-        setRecipes(updated);
-        localStorage.setItem('recipes', JSON.stringify(updated));
+    const toggleFavorite = async (id) => {
+        const target = recipes.find(r => r.id === id);
+        if (!target) return;
+
+        const updatedFavorite = !target.favorite;
+        const updatedRecipe = { ...target, favorite: updatedFavorite };
+
+        try {
+            const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedRecipe)
+            });
+
+            if (!res.ok) throw new Error('API update failed');
+
+            const data = await res.json();
+            const updated = recipes.map(r => r.id === id ? data : r);
+            setRecipes(updated);
+            localStorage.setItem('recipes', JSON.stringify(updated));
+        } catch (err) {
+            alert('❌ Failed to update favorite');
+        }
     };
 
     const rateRecipe = (id, stars) => {
@@ -149,7 +165,7 @@ export default function RecipeList() {
                         recipe={r}
                         onEdit={user ? setEditing : null}
                         onDelete={user ? deleteRecipe : null}
-                        onToggleFavorite={user ? toggleFavorite : null}
+                        onFavorite={user ? toggleFavorite : null} // ✅ FIX prop name
                         onRate={user ? rateRecipe : null}
                     />
                 ))}

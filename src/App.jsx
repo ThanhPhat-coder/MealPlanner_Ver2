@@ -1,5 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './components/auth/AuthContext';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, AuthContext } from './components/auth/AuthContext';
+import { useContext } from 'react';
+
 import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
 import RecipeList from './components/recipes/RecipeList';
@@ -11,41 +13,48 @@ import ProfilePage from './components/user/ProfilePage';
 import CreateRecipe from './pages/CreateRecipe';
 import SearchPage from './pages/SearchPage';
 import PrivateRoute from './components/auth/PrivateRoute';
+import Footer from './components/common/Footer';
+import useIsMobile from './hooks/useIsMobile';
+import LandingPage from './pages/LandingPage';
 
-function App() {
+
+function AppRoutes() {
+  const { user } = useContext(AuthContext);
+  const isMobile = useIsMobile();
+
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <MainLayout>
-          {/* <Navbar /> */}
-          <Routes>
-            <Route path="/" element={<RecipeList />} />
-            <Route path="/create" element={
-              <PrivateRoute>
-                <CreateRecipe />
-              </PrivateRoute>
-            } />
-
-            <Route path="/search" element={<SearchPage />} />
-
-            <Route path="/meal-plan" element={<MealPlanList />} />
-            <Route
-              path="/planner"
-              element={
-                <PrivateRoute>
-                  <MealPlanner />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-
-          </Routes>
-        </MainLayout>
-      </BrowserRouter>
-    </AuthProvider>
+    <BrowserRouter>
+      {!user ? (
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      ) : (
+        <>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<RecipeList />} />
+              <Route path="/create" element={<CreateRecipe />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/meal-plan" element={<MealPlanList />} />
+              <Route path="/planner" element={<MealPlanner />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </MainLayout>
+          {!isMobile && <Footer />}
+        </>
+      )}
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
+}

@@ -39,7 +39,6 @@ export default function RecipeItem({ recipe, onEdit, onDelete, onFavorite, onRat
 
     return (
         <>
-            {/* Card Preview */}
             <div className="recipe-card" onClick={() => setShowModal(true)} style={styles.card}>
                 <img src={recipe.image} alt={recipe.title} style={styles.image} />
                 <div className="overlay">
@@ -47,30 +46,47 @@ export default function RecipeItem({ recipe, onEdit, onDelete, onFavorite, onRat
                 </div>
             </div>
 
-            {/* Modal */}
             {showModal && (
-                <div className="modal-overlay" onClick={() => setShowModal(false)}>
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
-                        <button style={styles.closeBtn} onClick={() => setShowModal(false)}>❌</button>
+                <div className="modal-overlay" style={styles.modalOverlay} onClick={() => setShowModal(false)}>
+                    <div className="modal-container" style={styles.modalContainer} onClick={e => e.stopPropagation()}>
+                        <button style={styles.closeBtn} onClick={() => setShowModal(false)}>×</button>
 
-                        <img src={recipe.image} alt={recipe.title} style={{ width: '100%', borderRadius: '10px' }} />
-                        <h2>{recipe.title}</h2>
-                        <FavoriteButton isFavorite={recipe.favorite} onToggle={() => onFavorite(recipe.id)} />
-                        <p>{recipe.description}</p>
-                        <p><strong>Time:</strong> {recipe.time} mins</p>
-                        <p><strong>Servings:</strong> {recipe.servings}</p>
-                        <p><strong>Category:</strong> {recipe.category}</p>
+                        <div style={styles.modalContent}>
+                            <div style={styles.imageSection}>
+                                <img src={recipe.image} alt={recipe.title} style={styles.modalImage} />
+                            </div>
 
-                        <RatingStars rating={recipe.rating || 0} onRate={(stars) => onRate(recipe.id, stars)} />
-                        <ShareButtons recipeId={recipe.id} />
-                        <CommentList comments={comments} />
-                        <CommentForm onSubmit={handleAddComment} />
-                        {user && (
-                            <>
-                                <button onClick={() => onEdit(recipe)}>✏️ Edit</button>
-                                <button onClick={() => onDelete(recipe)}>🗑️ Delete</button>
-                            </>
-                        )}
+                            <div style={styles.detailsSection}>
+                                <h2 style={styles.title}>{recipe.title}</h2>
+
+                                <div style={styles.actions}>
+                                    <FavoriteButton isFavorite={recipe.favorite} onToggle={() => onFavorite(recipe.id)} />
+                                    <ShareButtons recipeId={recipe.id} />
+                                </div>
+
+                                <p>{recipe.description}</p>
+                                <p><strong>⏱ Time:</strong> {recipe.time} mins</p>
+                                <p><strong>🍽 Servings:</strong> {recipe.servings}</p>
+                                <p><strong>📂 Category:</strong> {recipe.category}</p>
+
+                                <div style={{ margin: '10px 0' }}>
+                                    <RatingStars rating={recipe.rating || 0} onRate={(stars) => onRate(recipe.id, stars)} />
+                                </div>
+
+                                <div style={styles.commentSection}>
+                                    <h4>Bình luận</h4>
+                                    <div style={styles.commentList}><CommentList comments={comments} /></div>
+                                    <CommentForm onSubmit={handleAddComment} />
+                                </div>
+
+                                {user && (
+                                    <div style={styles.editButtons}>
+                                        <button style={styles.editBtn} onClick={() => onEdit(recipe)}>✏️ Sửa</button>
+                                        <button style={styles.deleteBtn} onClick={() => onDelete(recipe)}>🗑️ Xoá</button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
@@ -89,17 +105,113 @@ const styles = {
     },
     image: {
         width: '100%',
-        height: '260px',
+        height: '100%',
         objectFit: 'cover'
+    },
+    modalOverlay: {
+        position: 'fixed',
+        top: 0, left: 0, right: 0, bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1000,
+        padding: '20px'
+    },
+    modalContainer: {
+        width: '100%',
+        maxWidth: '960px',
+        backgroundColor: '#fff',
+        borderRadius: '16px',
+        position: 'relative',
+        maxHeight: '190vh',
+        boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column'
     },
     closeBtn: {
         position: 'absolute',
-        top: '10px',
-        right: '10px',
-        fontSize: '1.2rem',
-        background: 'none',
+        top: '14px',
+        right: '14px',
+        fontSize: '1.8rem',
+        fontWeight: 'bold',
+        background: '#eee',
+        width: '36px',
+        height: '36px',
         border: 'none',
+        borderRadius: '50%',
         cursor: 'pointer',
-        color: '#f00'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'background 0.2s ease-in-out'
+    },
+    modalContent: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: '20px',
+        padding: '24px',
+        flexWrap: 'wrap',
+        overflowY: 'auto'
+    },
+    imageSection: {
+        flex: '1 1 40%',
+        maxHeight: '400px'
+    },
+    modalImage: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '10px'
+    },
+    detailsSection: {
+        flex: '1 1 55%',
+        overflowY: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px'
+    },
+    title: {
+        fontSize: '1.8rem',
+        margin: 0,
+        fontWeight: '600'
+    },
+    actions: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        flexWrap: 'wrap'
+    },
+    commentSection: {
+        marginTop: '20px'
+    },
+    commentList: {
+        maxHeight: '150px',
+        overflowY: 'auto',
+        marginBottom: '10px',
+        paddingRight: '5px'
+    },
+    editButtons: {
+        display: 'flex',
+        gap: '10px',
+        marginTop: '20px'
+    },
+    editBtn: {
+        padding: '8px 16px',
+        backgroundColor: '#007bff',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer'
+    },
+    deleteBtn: {
+        padding: '8px 16px',
+        backgroundColor: '#dc3545',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer'
     }
 };
+

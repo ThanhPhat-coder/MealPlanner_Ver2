@@ -83,8 +83,7 @@ form select:focus {
 }
 
 form button {
-  background-color: #f55;
-  color: white;
+  color: rgb(10, 174, 87);
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -92,7 +91,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #d33;
+  background-color: rgb(162, 216, 169);
 }
 
 
@@ -116,6 +115,13 @@ form button:hover {
   font-size: 12px;
   width: fit-content;
 }
+
+
+
+
+
+
+
 
 /* Avatar */
 img {
@@ -249,7 +255,13 @@ body {
     width: 75%;
     padding: 1rem;
   }
+
+  .recipe-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
 }
+
+
 
 .recipe-card {
   border: 1px solid #ccc;
@@ -257,13 +269,4 @@ body {
   margin-bottom: 1rem;
   border-radius: 8px;
   background-color: white;
-}
-
-
-
-
-@media (min-width: 768px) {
-  .recipe-grid {
-    grid-template-columns: repeat(7, 1fr);
-  }
 }
