@@ -16,7 +16,7 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import Footer from './components/common/Footer';
 import useIsMobile from './hooks/useIsMobile';
 import LandingPage from './pages/LandingPage';
-
+import FavoriteRecipes from './components/favorites/FavoriteRecipes';
 
 function AppRoutes() {
   const { user } = useContext(AuthContext);
@@ -39,6 +39,8 @@ function AppRoutes() {
               <Route path="/create" element={<CreateRecipe />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/meal-plan" element={<MealPlanList />} />
+              <Route path="/favorites" element={<FavoriteRecipes />} />
+
               <Route path="/planner" element={<MealPlanner />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<Navigate to="/" />} />

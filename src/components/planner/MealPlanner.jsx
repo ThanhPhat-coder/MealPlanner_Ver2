@@ -1,9 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { AuthContext } from '../auth/AuthContext'; // sửa đường dẫn đúng nếu bạn đặt AuthContext ở nơi khác
-
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import './MealPlanner.css'; // Đảm bảo bạn tạo file CSS này để style
+import { AuthContext } from '../auth/AuthContext';
+import {
+    DndContext,
+    DragOverlay,
+    closestCenter,
+    KeyboardSensor,
+    PointerSensor,
+    useSensor,
+    useSensors,
+} from '@dnd-kit/core';
+import {
+    arrayMove,
+    SortableContext,
+    sortableKeyboardCoordinates,
+} from '@dnd-kit/sortable';
+import DayColumn from './DayColumn';
+import './MealPlanner.css';
 
 
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -15,8 +28,49 @@ const getInitialPlan = () => {
     }, {});
 };
 
+// DragOverlay component to show the dragged recipe card
+function DragOverlayCard({ recipe }) {
+    if (!recipe) return null;
+
+    return (
+        <div className="meal-item dragging-overlay">
+            <div className="meal-content">
+                <div className="drag-handle">⋮⋮</div>
+                <div className="meal-details">
+                    <div className="meal-title">{recipe.title}</div>
+                    <div className="meal-info">
+                        <span className="cooking-time">🕒 {recipe.cookingTime}min</span>
+                        <span className="servings">👥 {recipe.servings}</span>
+                    </div>
+                </div>
+            </div>
+            <button className="delete-btn" disabled>
+                ❌
+            </button>
+        </div>
+    );
+}
+
 export default function MealPlanner() {
     const { user } = useContext(AuthContext);
+    const [mealPlan, setMealPlan] = useState(getInitialPlan);
+    const [recipes, setRecipes] = useState([]);
+    const [activeId, setActiveId] = useState(null);
+    const [showAllRecipes, setShowAllRecipes] = useState(false);
+
+    const INITIAL_RECIPES_COUNT = 6;
+
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('recipes')) || [];
+        setRecipes(data);
+    }, []);
 
     if (!user) {
         return (
@@ -28,36 +82,80 @@ export default function MealPlanner() {
         );
     }
 
-    const [mealPlan, setMealPlan] = useState(getInitialPlan);
-    const [recipes, setRecipes] = useState([]);
+    function handleDragStart(event) {
+        setActiveId(event.active.id);
+    }
 
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('recipes')) || [];
-        setRecipes(data);
-    }, []);
+    // Get the recipe being dragged
+    const getActiveRecipe = () => {
+        if (!activeId) return null;
 
-    const onDragEnd = (result) => {
-        const { source, destination } = result;
-        if (!destination) return;
+        const [day, , index] = activeId.split('-');
+        const indexNum = parseInt(index);
 
-        const sourceDay = source.droppableId;
-        const destDay = destination.droppableId;
-
-        const sourceItems = Array.from(mealPlan[sourceDay]);
-        const [movedItem] = sourceItems.splice(source.index, 1);
-
-        const destItems = Array.from(mealPlan[destDay]);
-        destItems.splice(destination.index, 0, movedItem);
-
-        const updated = {
-            ...mealPlan,
-            [sourceDay]: sourceItems,
-            [destDay]: destItems,
-        };
-
-        setMealPlan(updated);
-        localStorage.setItem('mealPlan', JSON.stringify(updated));
+        return mealPlan[day]?.[indexNum];
     };
+
+    function handleDragEnd(event) {
+        const { active, over } = event;
+
+        setActiveId(null);
+
+        if (!over) return;
+
+        const activeId = active.id;
+        const overId = over.id;
+
+        // Parse the drag item info: format is "day-recipeId-index"
+        const [activeDay, , activeIndex] = activeId.split('-');
+        const activeIndexNum = parseInt(activeIndex);
+
+        // Determine if dropping on a day column or another item
+        let targetDay, targetIndex;
+
+        if (overId.includes('-')) {
+            // Dropping on another item
+            const [targetDayParsed, , targetIndexParsed] = overId.split('-');
+            targetDay = targetDayParsed;
+            targetIndex = parseInt(targetIndexParsed);
+        } else {
+            // Dropping on a day column
+            targetDay = overId;
+            targetIndex = mealPlan[targetDay].length; // Add to end
+        }
+
+        if (activeDay === targetDay) {
+            // Moving within the same day
+            if (activeIndexNum === targetIndex) return;
+
+            const items = Array.from(mealPlan[activeDay]);
+            const newItems = arrayMove(items, activeIndexNum, targetIndex);
+
+            const updated = {
+                ...mealPlan,
+                [activeDay]: newItems,
+            };
+
+            setMealPlan(updated);
+            localStorage.setItem('mealPlan', JSON.stringify(updated));
+        } else {
+            // Moving between different days
+            const sourceItems = Array.from(mealPlan[activeDay]);
+            const destItems = Array.from(mealPlan[targetDay]);
+
+            const [movedItem] = sourceItems.splice(activeIndexNum, 1);
+            destItems.splice(targetIndex, 0, movedItem);
+
+            const updated = {
+                ...mealPlan,
+                [activeDay]: sourceItems,
+                [targetDay]: destItems,
+            };
+
+            setMealPlan(updated);
+            localStorage.setItem('mealPlan', JSON.stringify(updated));
+        }
+    }
 
     const handleDeleteRecipe = (day, idx) => {
         const updated = {
@@ -91,17 +189,75 @@ export default function MealPlanner() {
     };
 
     const nutrition = getNutritionTotal();
+    const displayedRecipes = showAllRecipes ? recipes : recipes.slice(0, INITIAL_RECIPES_COUNT);
+    const hasMoreRecipes = recipes.length > INITIAL_RECIPES_COUNT;
+
+    const totalMeals = Object.values(mealPlan).flat().length;
 
     return (
         <div className="meal-planner-container">
-            <h2>📅 Weekly Meal Planner</h2>
+            <div className="planner-header">
+                <div className="header-content">
+                    <div className="header-title">
+                        <h1>
+                            <span className="header-icon">📅</span>
+                            Weekly Meal Planner
+                        </h1>
+                        <p className="header-subtitle">Plan your delicious week ahead</p>
+                    </div>
+                    <div className="header-stats">
+                        <div className="stat-card">
+                            <span className="stat-number">{totalMeals}</span>
+                            <span className="stat-label">Meals Planned</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">{recipes.length}</span>
+                            <span className="stat-label">Available Recipes</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">{nutrition.calories}</span>
+                            <span className="stat-label">Total Calories</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div className="available-recipes">
-                <h3>Available Recipes</h3>
+                <div className="recipes-header">
+                    <h3>
+                        <span className="recipes-icon">🍳</span>
+                        Available Recipes
+                        <span className="recipes-count">({recipes.length})</span>
+                    </h3>
+                    {hasMoreRecipes && (
+                        <button
+                            className="show-more-btn"
+                            onClick={() => setShowAllRecipes(!showAllRecipes)}
+                        >
+                            {showAllRecipes ? (
+                                <>
+                                    <span>Show Less</span>
+                                    <span className="btn-icon">▲</span>
+                                </>
+                            ) : (
+                                <>
+                                    <span>Show More ({recipes.length - INITIAL_RECIPES_COUNT})</span>
+                                    <span className="btn-icon">▼</span>
+                                </>
+                            )}
+                        </button>
+                    )}
+                </div>
                 <ul>
-                    {recipes.map(r => (
+                    {displayedRecipes.map(r => (
                         <li key={r.id}>
-                            {r.title}
+                            <div className="recipe-info">
+                                <span className="recipe-name">{r.title}</span>
+                                <div className="recipe-meta">
+                                    <span className="cooking-time">🕒 {r.cookingTime}min</span>
+                                    <span className="servings">👥 {r.servings}</span>
+                                </div>
+                            </div>
                             <select onChange={(e) => handleAddToDay(r, e.target.value)} defaultValue="">
                                 <option value="" disabled>➕ Add to...</option>
                                 {daysOfWeek.map(day => (
@@ -113,63 +269,52 @@ export default function MealPlanner() {
                 </ul>
             </div>
 
-            <DragDropContext onDragEnd={onDragEnd}>
+            <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+            >
                 <div className="calendar-grid">
                     {daysOfWeek.map(day => (
-                        <Droppable key={day} droppableId={day}>
-                            {(provided) => (
-                                <div className="day-column" ref={provided.innerRef} {...provided.droppableProps}>
-                                    <h3>{day}</h3>
-                                    {mealPlan[day].map((r, idx) => (
-                                        <Draggable
-                                            key={`${day}-${r.id}-${idx}`}
-                                            draggableId={`${day}-${r.id}-${idx}`}
-                                            index={idx}
-                                        >
-                                            {(provided) => (
-                                                <div
-                                                    className="meal-item"
-                                                    ref={provided.innerRef}
-                                                    {...provided.draggableProps}
-                                                    {...provided.dragHandleProps}
-                                                    style={{
-                                                        ...provided.draggableProps.style,
-                                                        display: 'flex',
-                                                        justifyContent: 'space-between',
-                                                        alignItems: 'center',
-                                                        padding: '8px',
-                                                        background: '#fff',
-                                                        marginBottom: '6px',
-                                                        borderRadius: '8px',
-                                                        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-                                                    }}
-                                                >
-                                                    {r.title}
-                                                    <span
-                                                        className="delete-icon"
-                                                        onClick={() => handleDeleteRecipe(day, idx)}
-                                                        title="Remove"
-                                                    >
-                                                        ❌
-                                                    </span>
-                                                </div>
-                                            )}
-                                        </Draggable>
-                                    ))}
-                                    {provided.placeholder}
-                                </div>
-                            )}
-                        </Droppable>
+                        <DayColumn
+                            key={day}
+                            day={day}
+                            meals={mealPlan[day]}
+                            onDeleteRecipe={handleDeleteRecipe}
+                        />
                     ))}
                 </div>
-            </DragDropContext>
+                <DragOverlay>
+                    {activeId ? (
+                        <DragOverlayCard recipe={getActiveRecipe()} />
+                    ) : null}
+                </DragOverlay>
+            </DndContext>
 
             <div className="summary">
-                <h3>🧾 Nutrition Summary</h3>
-                <p>Calories: {nutrition.calories}</p>
-                <p>Protein: {nutrition.protein}g</p>
-                <p>Fat: {nutrition.fat}g</p>
-                <p>Carbs: {nutrition.carbs}g</p>
+                <h3>
+                    <span className="summary-icon">📊</span>
+                    Weekly Nutrition Summary
+                </h3>
+                <div className="nutrition-grid">
+                    <div className="nutrition-item">
+                        <span className="nutrition-label">Calories</span>
+                        <span className="nutrition-value">{nutrition.calories}</span>
+                    </div>
+                    <div className="nutrition-item">
+                        <span className="nutrition-label">Protein</span>
+                        <span className="nutrition-value">{nutrition.protein}g</span>
+                    </div>
+                    <div className="nutrition-item">
+                        <span className="nutrition-label">Fat</span>
+                        <span className="nutrition-value">{nutrition.fat}g</span>
+                    </div>
+                    <div className="nutrition-item">
+                        <span className="nutrition-label">Carbs</span>
+                        <span className="nutrition-value">{nutrition.carbs}g</span>
+                    </div>
+                </div>
             </div>
         </div>
     );

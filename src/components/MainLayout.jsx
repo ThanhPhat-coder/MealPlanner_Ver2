@@ -40,7 +40,7 @@ export default function MainLayout({ children }) {
                     <Link to="/create" onClick={closeMenu}>Add Recipe</Link>
                     <Link to="/search" onClick={closeMenu}>Search</Link>
                     {/* <Link to="/search" onClick={closeMenu}>Recipes</Link> */}
-                    {/* <Link to="/favorites" onClick={closeMenu}>Favorites</Link> */}
+                    <Link to="/favorites" onClick={closeMenu}>Favorites ❤️</Link>
                     <Link to="/planner" onClick={closeMenu}>Meal Planner</Link>
 
                     {user ? (
