@@ -57,6 +57,7 @@ export default function MealPlanner() {
     const [recipes, setRecipes] = useState([]);
     const [activeId, setActiveId] = useState(null);
     const [showAllRecipes, setShowAllRecipes] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const INITIAL_RECIPES_COUNT = 6;
 
@@ -189,10 +190,34 @@ export default function MealPlanner() {
     };
 
     const nutrition = getNutritionTotal();
-    const displayedRecipes = showAllRecipes ? recipes : recipes.slice(0, INITIAL_RECIPES_COUNT);
     const hasMoreRecipes = recipes.length > INITIAL_RECIPES_COUNT;
-
     const totalMeals = Object.values(mealPlan).flat().length;
+
+    // Search logic: if there's a search term, search in all recipes
+    // If no search term, apply show more/less logic
+    const getFilteredRecipes = () => {
+        if (searchTerm.trim()) {
+            // When searching, search through ALL recipes
+            return recipes.filter(recipe =>
+                recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                recipe.ingredients?.some(ingredient => 
+                    ingredient.toLowerCase().includes(searchTerm.toLowerCase())
+                ) ||
+                recipe.tags?.some(tag => 
+                    tag.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+            );
+        } else {
+            // When not searching, apply show more/less logic
+            return showAllRecipes ? recipes : recipes.slice(0, INITIAL_RECIPES_COUNT);
+        }
+    };
+
+    const filteredRecipes = getFilteredRecipes();
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
 
     return (
         <div className="meal-planner-container">
@@ -227,29 +252,45 @@ export default function MealPlanner() {
                     <h3>
                         <span className="recipes-icon">🍳</span>
                         Available Recipes
-                        <span className="recipes-count">({recipes.length})</span>
+                        <span className="recipes-count">
+                            {searchTerm.trim() 
+                                ? `(${filteredRecipes.length} found)` 
+                                : `(${recipes.length})`
+                            }
+                        </span>
                     </h3>
-                    {hasMoreRecipes && (
-                        <button
-                            className="show-more-btn"
-                            onClick={() => setShowAllRecipes(!showAllRecipes)}
-                        >
-                            {showAllRecipes ? (
-                                <>
-                                    <span>Show Less</span>
-                                    <span className="btn-icon">▲</span>
-                                </>
-                            ) : (
-                                <>
-                                    <span>Show More ({recipes.length - INITIAL_RECIPES_COUNT})</span>
-                                    <span className="btn-icon">▼</span>
-                                </>
-                            )}
-                        </button>
-                    )}
+                    <div className="recipes-controls">
+                        <div className="search-container">
+                            <input
+                                type="text"
+                                placeholder="🔍 Search recipes..."
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                className="search-input"
+                            />
+                        </div>
+                        {hasMoreRecipes && !searchTerm.trim() && (
+                            <button
+                                className="show-more-btn"
+                                onClick={() => setShowAllRecipes(!showAllRecipes)}
+                            >
+                                {showAllRecipes ? (
+                                    <>
+                                        <span>Show Less</span>
+                                        <span className="btn-icon">▲</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Show More ({recipes.length - INITIAL_RECIPES_COUNT})</span>
+                                        <span className="btn-icon">▼</span>
+                                    </>
+                                )}
+                            </button>
+                        )}
+                    </div>
                 </div>
                 <ul>
-                    {displayedRecipes.map(r => (
+                    {filteredRecipes.map(r => (
                         <li key={r.id}>
                             <div className="recipe-info">
                                 <span className="recipe-name">{r.title}</span>
@@ -266,6 +307,22 @@ export default function MealPlanner() {
                             </select>
                         </li>
                     ))}
+                    {filteredRecipes.length === 0 && searchTerm && (
+                        <li className="no-results">
+                            <div className="no-results-content">
+                                <span className="no-results-icon">🔍</span>
+                                <span className="no-results-text">
+                                    No recipes found for "{searchTerm}"
+                                </span>
+                                <button 
+                                    className="clear-search-btn"
+                                    onClick={() => setSearchTerm('')}
+                                >
+                                    Clear search
+                                </button>
+                            </div>
+                        </li>
+                    )}
                 </ul>
             </div>
 

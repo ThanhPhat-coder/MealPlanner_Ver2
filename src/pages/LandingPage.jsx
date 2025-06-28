@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import presidentImg from '../assets/team/president.jpg';
+// import presidentImg from '../assets/team/president.jpg';
 import president1Img from '../assets/team/president1.png';
 import president2Img from '../assets/team/president2.jpg';
 import president3Img from '../assets/team/president3.jpg';

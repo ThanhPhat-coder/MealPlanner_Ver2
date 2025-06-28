@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import RecipeForm from './RecipeForm';
 import RecipeItem from './RecipeItem';
+import RecipeSuggestions from './RecipeSuggestions';
 import { AuthContext } from '../auth/AuthContext';
 
 export default function RecipeList() {
@@ -115,7 +116,7 @@ export default function RecipeList() {
             const updated = recipes.map(r => r.id === id ? data : r);
             setRecipes(updated);
             localStorage.setItem('recipes', JSON.stringify(updated));
-        } catch (err) {
+        } catch {
             alert('❌ Failed to update favorite');
         }
     };
@@ -130,6 +131,8 @@ export default function RecipeList() {
 
     return (
         <>
+            <RecipeSuggestions />
+            
             {editing && (
                 <div style={{ marginBottom: '20px', position: 'relative', border: '1px solid #ccc', padding: '10px' }}>
                     <h3>✏️ Editing: {editing.title}</h3>

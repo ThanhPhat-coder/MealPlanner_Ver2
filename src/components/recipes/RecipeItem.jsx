@@ -5,11 +5,13 @@ import RatingStars from './RatingStars';
 import ShareButtons from './ShareButtons';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
+import useIsMobile from '../../hooks/useIsMobile';
 
-export default function RecipeItem({ recipe, onEdit, onDelete, onFavorite, onRate }) {
+export default function RecipeItem({ recipe, onEdit, onDelete, onFavorite, onRate, compact = false }) {
     const { user } = useContext(AuthContext);
     const [showModal, setShowModal] = useState(false);
     const [comments, setComments] = useState(recipe.comments || []);
+    const isMobile = useIsMobile();
 
     const handleAddComment = async (text) => {
         if (!user) return alert('⚠️ Bạn cần đăng nhập để bình luận!');
@@ -36,6 +38,33 @@ export default function RecipeItem({ recipe, onEdit, onDelete, onFavorite, onRat
             all.map(r => r.id === recipe.id ? { ...r, comments: updatedComments } : r)
         ));
     };
+
+    if (compact) {
+        if (isMobile) {
+            return (
+                <div className="recipe-card" onClick={() => setShowModal(true)} style={{...styles.card, ...styles.mobileCompactCard}}>
+                    <img src={recipe.image} alt={recipe.title} style={styles.image} />
+                    <div className="mobile-overlay" style={styles.mobileOverlay}>
+                        <h4 style={styles.mobileTitle}>{recipe.title}</h4>
+                    </div>
+                </div>
+            );
+        }
+        
+        return (
+            <div className="recipe-card" onClick={() => setShowModal(true)} style={{...styles.card, ...styles.compactCard}}>
+                <img src={recipe.image} alt={recipe.title} style={styles.image} />
+                <div className="recipe-content">
+                    <div className="recipe-title">{recipe.title}</div>
+                    <div className="recipe-category">{recipe.category}</div>
+                    <div className="recipe-meta">
+                        <span>⏱ {recipe.cookingTime}m</span>
+                        <span>⭐ {recipe.rating}</span>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -212,6 +241,31 @@ const styles = {
         border: 'none',
         borderRadius: '6px',
         cursor: 'pointer'
+    },
+    compactCard: {
+        height: '280px',
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    mobileCompactCard: {
+        height: '280px',
+        position: 'relative'
+    },
+    mobileOverlay: {
+        position: 'absolute',
+        bottom: 0, left: 0, right: 0,
+        background: 'linear-gradient(transparent, rgba(0, 0, 0, 0.8))',
+        display: 'flex',
+        alignItems: 'end',
+        padding: '15px',
+        borderRadius: '0 0 12px 12px'
+    },
+    mobileTitle: {
+        fontSize: '1rem',
+        margin: 0,
+        fontWeight: '600',
+        color: '#fff',
+        textShadow: '0 1px 3px rgba(0,0,0,0.8)'
     }
 };
 
