@@ -51,6 +51,7 @@ export default function MainLayout({ children }) {
         if (path === '/') return 'Home';
         if (path === '/create') return 'Add Recipe';
         if (path === '/search') return 'Search';
+        if (path === '/recipes') return 'Recipes';
         if (path === '/favorites') return 'Favorites';
         if (path === '/planner') return 'Meal Planner';
         if (path === '/profile') return 'Profile';
@@ -73,8 +74,8 @@ export default function MainLayout({ children }) {
                     </div>
                 </div>
 
-                <button 
-                    className={`hamburger ${menuOpen ? 'active' : ''}`} 
+                <button
+                    className={`hamburger ${menuOpen ? 'active' : ''}`}
                     onClick={toggleMenu}
                     aria-label="Toggle menu"
                 >
@@ -85,40 +86,48 @@ export default function MainLayout({ children }) {
 
                 <nav className={`nav ${menuOpen ? 'open' : ''}`}>
                     <div className="nav-links">
-                        <Link 
-                            to="/" 
+                        <Link
+                            to="/"
                             className={`nav-link ${isActive('/') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">🏠</span>
                             <span>Home</span>
                         </Link>
-                        <Link 
-                            to="/create" 
+                        <Link
+                            to="/create"
                             className={`nav-link ${isActive('/create') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">➕</span>
                             <span>Add Recipe</span>
                         </Link>
-                        <Link 
-                            to="/search" 
+                        <Link
+                            to="/search"
                             className={`nav-link ${isActive('/search') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">🔍</span>
                             <span>Search</span>
                         </Link>
-                        <Link 
-                            to="/favorites" 
+                        <Link
+                            to="/recipes"
+                            className={`nav-link ${isActive('/recipes') ? 'active' : ''}`}
+                            onClick={closeMenu}
+                        >
+                            <span className="nav-icon">❤️</span>
+                            <span>Recipes</span>
+                        </Link>
+                        <Link
+                            to="/favorites"
                             className={`nav-link ${isActive('/favorites') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">❤️</span>
                             <span>Favorites</span>
                         </Link>
-                        <Link 
-                            to="/planner" 
+                        <Link
+                            to="/planner"
                             className={`nav-link ${isActive('/planner') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
@@ -129,7 +138,7 @@ export default function MainLayout({ children }) {
 
                     <div className="nav-actions">
                         <ThemeToggle />
-                        
+
                         {user ? (
                             <div className="user-section">
                                 <Link to="/profile" className="user-info" onClick={closeMenu}>
@@ -141,8 +150,8 @@ export default function MainLayout({ children }) {
                                         <div className="username">{user.username} 👋</div>
                                     </div>
                                 </Link>
-                                <button 
-                                    onClick={() => { logout(); closeMenu(); }} 
+                                <button
+                                    onClick={() => { logout(); closeMenu(); }}
                                     className="logout-btn"
                                     title="Logout"
                                 >

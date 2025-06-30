@@ -111,7 +111,6 @@ export default function FavoriteRecipes() {
         <div style={{ 
             padding: '20px', 
             fontFamily: '"Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif', 
-            background: '#f8f9fa', 
             minHeight: '100vh' 
         }}>
             {/* Header Controls */}
@@ -314,7 +313,7 @@ export default function FavoriteRecipes() {
                             }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <span style={{ fontSize: '16px' }}>⏰</span>
-                                    <span>{r.time} min</span>
+                                    <span>{r.cookingTime} min</span>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <span style={{ fontSize: '16px' }}>🍽️</span>

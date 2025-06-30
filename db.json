@@ -15,7 +15,7 @@
       "cookingTime": 22,
       "servings": 6,
       "category": "Dessert",
-      "rating": 5,
+      "rating": 3.3,
       "image": "https://media.istockphoto.com/id/1142391463/photo/pasta-carbonara.jpg?s=612x612&w=0&k=20&c=7gO9mReNFzY10qsmu_X4_LZ45-UcVPtzpHF-DOFp6Cc=",
       "comments": [
         {
@@ -23,20 +23,14 @@
           "profilePic": "",
           "text": "Loved it!",
           "timestamp": "2025-06-04T06:41:46.563149"
-        },
-        {
-          "username": "admin",
-          "profilePic": "",
-          "text": "waa!",
-          "timestamp": "6/21/2025, 5:01:15 PM"
-        },
-        {
-          "username": "admin",
-          "profilePic": "",
-          "text": "yea",
-          "timestamp": "6/22/2025, 5:37:32 PM"
         }
       ],
+      "nutrition": {
+        "calories": 384,
+        "protein": 36,
+        "fat": 8,
+        "carbs": 45
+      },
       "favorite": true
     },
     {
@@ -63,7 +57,14 @@
           "text": "Loved it!",
           "timestamp": "2025-05-27T06:41:46.563200"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 542,
+        "protein": 14,
+        "fat": 29,
+        "carbs": 51
+      },
+      "favorite": true
     },
     {
       "id": "3",
@@ -90,13 +91,24 @@
           "timestamp": "2025-06-20T06:41:46.563223"
         },
         {
-          "username": "admin",
-          "profilePic": "",
-          "text": "wow!",
-          "timestamp": "6/22/2025, 4:08:04 PM"
+          "username": "aaa",
+          "profilePic": "a",
+          "text": "a",
+          "timestamp": "6/23/2025, 8:50:33 AM"
+        },
+        {
+          "username": "aaa",
+          "profilePic": "a",
+          "text": "a",
+          "timestamp": "6/23/2025, 8:50:35 AM"
         }
       ],
-      "favorite": false
+      "nutrition": {
+        "calories": 535,
+        "protein": 18,
+        "fat": 18,
+        "carbs": 26
+      }
     },
     {
       "id": "4",
@@ -121,14 +133,14 @@
           "profilePic": "",
           "text": "Loved it!",
           "timestamp": "2025-05-23T06:41:46.563236"
-        },
-        {
-          "username": "admin",
-          "profilePic": "",
-          "text": "nice!!",
-          "timestamp": "6/22/2025, 5:00:42 PM"
         }
       ],
+      "nutrition": {
+        "calories": 273,
+        "protein": 14,
+        "fat": 16,
+        "carbs": 51
+      },
       "favorite": true
     },
     {
@@ -146,7 +158,7 @@
       "cookingTime": 46,
       "servings": 5,
       "category": "Snack",
-      "rating": 5,
+      "rating": 4.7,
       "image": "https://www.shutterstock.com/image-photo/homemade-chicken-curry-pan-wooden-600nw-2476480287.jpg",
       "comments": [
         {
@@ -156,8 +168,13 @@
           "timestamp": "2025-05-24T06:41:46.563248"
         }
       ],
-      "favorite": true,
-      "pinned": false
+      "nutrition": {
+        "calories": 550,
+        "protein": 18,
+        "fat": 30,
+        "carbs": 22
+      },
+      "favorite": true
     },
     {
       "id": "6",
@@ -183,7 +200,14 @@
           "text": "Great dish!",
           "timestamp": "2025-05-30T06:41:46.563269"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 284,
+        "protein": 18,
+        "fat": 20,
+        "carbs": 32
+      },
+      "favorite": true
     },
     {
       "id": "7",
@@ -200,7 +224,7 @@
       "cookingTime": 40,
       "servings": 3,
       "category": "Snack",
-      "rating": 5,
+      "rating": 3.9,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDY6K3jY_WrinFezxwRDenPAJ9AU7kxmLexw&s",
       "comments": [
         {
@@ -208,16 +232,15 @@
           "profilePic": "",
           "text": "Easy and fast!",
           "timestamp": "2025-06-05T06:41:46.563288"
-        },
-        {
-          "username": "admin",
-          "profilePic": "",
-          "text": "yeah!",
-          "timestamp": "6/22/2025, 5:16:28 PM"
         }
       ],
-      "favorite": true,
-      "pinned": true
+      "nutrition": {
+        "calories": 516,
+        "protein": 37,
+        "fat": 26,
+        "carbs": 38
+      },
+      "favorite": true
     },
     {
       "id": "8",
@@ -243,7 +266,14 @@
           "text": "Great dish!",
           "timestamp": "2025-05-30T06:41:46.563317"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 488,
+        "protein": 30,
+        "fat": 13,
+        "carbs": 59
+      },
+      "favorite": true
     },
     {
       "id": "9",
@@ -260,8 +290,8 @@
       "cookingTime": 19,
       "servings": 2,
       "category": "Dessert",
-      "rating": 4,
-      "image": "https://t4.ftcdn.net/jpg/02/02/48/35/360_F_202483549_3cDh8uaQ5OJG9GUDsp9YKSQNt69rjucc.jpg",
+      "rating": 3.9,
+      "image": "https://www.shutterstock.com/image-photo/caesar-salad-paper-bowl-take-600w-1178418982.jpg",
       "comments": [
         {
           "username": "user10",
@@ -270,7 +300,12 @@
           "timestamp": "2025-05-31T06:41:46.563334"
         }
       ],
-      "favorite": true
+      "nutrition": {
+        "calories": 688,
+        "protein": 36,
+        "fat": 7,
+        "carbs": 38
+      }
     },
     {
       "id": "10",
@@ -296,7 +331,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-05-27T06:41:46.563348"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 377,
+        "protein": 34,
+        "fat": 12,
+        "carbs": 45
+      }
     },
     {
       "id": "11",
@@ -322,7 +363,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-05-29T06:41:46.563359"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 638,
+        "protein": 28,
+        "fat": 6,
+        "carbs": 45
+      }
     },
     {
       "id": "12",
@@ -348,7 +395,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-15T06:41:46.563370"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 256,
+        "protein": 35,
+        "fat": 27,
+        "carbs": 43
+      }
     },
     {
       "id": "13",
@@ -374,7 +427,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-06-08T06:41:46.563381"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 587,
+        "protein": 13,
+        "fat": 23,
+        "carbs": 60
+      }
     },
     {
       "id": "14",
@@ -400,7 +459,13 @@
           "text": "Great dish!",
           "timestamp": "2025-06-20T06:41:46.563391"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 230,
+        "protein": 17,
+        "fat": 30,
+        "carbs": 46
+      }
     },
     {
       "id": "15",
@@ -426,7 +491,13 @@
           "text": "Loved it!",
           "timestamp": "2025-06-18T06:41:46.563402"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 307,
+        "protein": 22,
+        "fat": 23,
+        "carbs": 34
+      }
     },
     {
       "id": "16",
@@ -452,7 +523,13 @@
           "text": "Great dish!",
           "timestamp": "2025-06-15T06:41:46.563414"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 590,
+        "protein": 21,
+        "fat": 28,
+        "carbs": 20
+      }
     },
     {
       "id": "17",
@@ -478,7 +555,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-06-06T06:41:46.563430"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 551,
+        "protein": 12,
+        "fat": 6,
+        "carbs": 23
+      }
     },
     {
       "id": "18",
@@ -504,7 +587,13 @@
           "text": "Loved it!",
           "timestamp": "2025-05-26T06:41:46.563560"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 238,
+        "protein": 27,
+        "fat": 24,
+        "carbs": 39
+      }
     },
     {
       "id": "19",
@@ -530,7 +619,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-06-01T06:41:46.563577"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 684,
+        "protein": 30,
+        "fat": 7,
+        "carbs": 59
+      }
     },
     {
       "id": "20",
@@ -557,7 +652,12 @@
           "timestamp": "2025-05-22T06:41:46.563596"
         }
       ],
-      "favorite": true
+      "nutrition": {
+        "calories": 579,
+        "protein": 31,
+        "fat": 18,
+        "carbs": 48
+      }
     },
     {
       "id": "21",
@@ -574,7 +674,7 @@
       "cookingTime": 36,
       "servings": 2,
       "category": "Dinner",
-      "rating": 5,
+      "rating": 3.8,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhsyOYbJIYL-JYhKLSn8hJJ2lSHe9tt0l7Q&s",
       "comments": [
         {
@@ -584,7 +684,12 @@
           "timestamp": "2025-06-12T06:41:46.563611"
         }
       ],
-      "favorite": false
+      "nutrition": {
+        "calories": 668,
+        "protein": 30,
+        "fat": 22,
+        "carbs": 48
+      }
     },
     {
       "id": "22",
@@ -610,7 +715,13 @@
           "text": "Loved it!",
           "timestamp": "2025-06-10T06:41:46.563627"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 639,
+        "protein": 18,
+        "fat": 22,
+        "carbs": 39
+      }
     },
     {
       "id": "23",
@@ -636,7 +747,13 @@
           "text": "Great dish!",
           "timestamp": "2025-05-26T06:41:46.563641"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 494,
+        "protein": 16,
+        "fat": 7,
+        "carbs": 22
+      }
     },
     {
       "id": "24",
@@ -662,7 +779,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-06-18T06:41:46.563719"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 248,
+        "protein": 27,
+        "fat": 23,
+        "carbs": 58
+      }
     },
     {
       "id": "25",
@@ -688,7 +811,13 @@
           "text": "Great dish!",
           "timestamp": "2025-06-08T06:41:46.563744"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 674,
+        "protein": 24,
+        "fat": 5,
+        "carbs": 24
+      }
     },
     {
       "id": "26",
@@ -714,7 +843,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-05T06:41:46.563764"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 588,
+        "protein": 34,
+        "fat": 10,
+        "carbs": 58
+      }
     },
     {
       "id": "27",
@@ -740,7 +875,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-06-11T06:41:46.563777"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 515,
+        "protein": 14,
+        "fat": 20,
+        "carbs": 46
+      }
     },
     {
       "id": "28",
@@ -766,7 +907,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-06-20T06:41:46.563788"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 645,
+        "protein": 24,
+        "fat": 18,
+        "carbs": 52
+      }
     },
     {
       "id": "29",
@@ -792,7 +939,13 @@
           "text": "Great dish!",
           "timestamp": "2025-05-29T06:41:46.563808"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 695,
+        "protein": 38,
+        "fat": 9,
+        "carbs": 45
+      }
     },
     {
       "id": "30",
@@ -818,7 +971,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-05-29T06:41:46.563821"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 563,
+        "protein": 31,
+        "fat": 15,
+        "carbs": 47
+      }
     },
     {
       "id": "31",
@@ -844,7 +1003,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-06-01T06:41:46.563832"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 618,
+        "protein": 23,
+        "fat": 21,
+        "carbs": 52
+      }
     },
     {
       "id": "32",
@@ -870,7 +1035,13 @@
           "text": "Loved it!",
           "timestamp": "2025-06-14T06:41:46.563843"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 422,
+        "protein": 25,
+        "fat": 10,
+        "carbs": 49
+      }
     },
     {
       "id": "33",
@@ -896,7 +1067,13 @@
           "text": "Loved it!",
           "timestamp": "2025-05-31T06:41:46.563855"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 505,
+        "protein": 26,
+        "fat": 21,
+        "carbs": 22
+      }
     },
     {
       "id": "34",
@@ -922,7 +1099,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-08T06:41:46.563873"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 376,
+        "protein": 22,
+        "fat": 25,
+        "carbs": 58
+      }
     },
     {
       "id": "35",
@@ -948,7 +1131,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-05-28T06:41:46.563890"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 342,
+        "protein": 18,
+        "fat": 22,
+        "carbs": 21
+      }
     },
     {
       "id": "36",
@@ -974,7 +1163,13 @@
           "text": "Great dish!",
           "timestamp": "2025-05-27T06:41:46.563905"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 344,
+        "protein": 26,
+        "fat": 12,
+        "carbs": 45
+      }
     },
     {
       "id": "37",
@@ -1000,7 +1195,13 @@
           "text": "Loved it!",
           "timestamp": "2025-06-15T06:41:46.563917"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 423,
+        "protein": 27,
+        "fat": 19,
+        "carbs": 48
+      }
     },
     {
       "id": "38",
@@ -1026,7 +1227,13 @@
           "text": "Great dish!",
           "timestamp": "2025-06-13T06:41:46.563930"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 208,
+        "protein": 18,
+        "fat": 15,
+        "carbs": 21
+      }
     },
     {
       "id": "39",
@@ -1052,7 +1259,13 @@
           "text": "Great dish!",
           "timestamp": "2025-05-31T06:41:46.563946"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 672,
+        "protein": 33,
+        "fat": 12,
+        "carbs": 57
+      }
     },
     {
       "id": "40",
@@ -1078,7 +1291,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-01T06:41:46.563964"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 484,
+        "protein": 38,
+        "fat": 7,
+        "carbs": 33
+      }
     },
     {
       "id": "41",
@@ -1104,7 +1323,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-06-20T06:41:46.563976"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 467,
+        "protein": 24,
+        "fat": 11,
+        "carbs": 30
+      }
     },
     {
       "id": "42",
@@ -1130,7 +1355,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-07T06:41:46.563998"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 265,
+        "protein": 29,
+        "fat": 7,
+        "carbs": 53
+      }
     },
     {
       "id": "43",
@@ -1156,7 +1387,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-06-19T06:41:46.564010"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 222,
+        "protein": 27,
+        "fat": 19,
+        "carbs": 54
+      }
     },
     {
       "id": "44",
@@ -1182,7 +1419,13 @@
           "text": "Great dish!",
           "timestamp": "2025-05-30T06:41:46.564020"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 566,
+        "protein": 16,
+        "fat": 16,
+        "carbs": 37
+      }
     },
     {
       "id": "45",
@@ -1208,7 +1451,13 @@
           "text": "Loved it!",
           "timestamp": "2025-06-11T06:41:46.564031"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 300,
+        "protein": 36,
+        "fat": 16,
+        "carbs": 31
+      }
     },
     {
       "id": "46",
@@ -1234,7 +1483,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-05-29T06:41:46.564041"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 390,
+        "protein": 20,
+        "fat": 15,
+        "carbs": 22
+      }
     },
     {
       "id": "47",
@@ -1260,7 +1515,13 @@
           "text": "Loved it!",
           "timestamp": "2025-05-26T06:41:46.564052"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 233,
+        "protein": 36,
+        "fat": 27,
+        "carbs": 40
+      }
     },
     {
       "id": "48",
@@ -1286,7 +1547,13 @@
           "text": "Too spicy for me.",
           "timestamp": "2025-05-31T06:41:46.564062"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 690,
+        "protein": 38,
+        "fat": 14,
+        "carbs": 26
+      }
     },
     {
       "id": "49",
@@ -1312,7 +1579,13 @@
           "text": "Easy and fast!",
           "timestamp": "2025-06-12T06:41:46.564073"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 312,
+        "protein": 39,
+        "fat": 21,
+        "carbs": 52
+      }
     },
     {
       "id": "50",
@@ -1338,7 +1611,13 @@
           "text": "Would cook again.",
           "timestamp": "2025-05-28T06:41:46.564083"
         }
-      ]
+      ],
+      "nutrition": {
+        "calories": 210,
+        "protein": 38,
+        "fat": 26,
+        "carbs": 30
+      }
     }
   ]
 }

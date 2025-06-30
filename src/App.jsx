@@ -18,6 +18,9 @@ import useIsMobile from './hooks/useIsMobile';
 import LandingPage from './pages/LandingPage';
 import FavoriteRecipes from './components/favorites/FavoriteRecipes';
 
+import NutritionList from './components/nutrition/NutritionList';
+import NutritionDetail from './components/nutrition/NutritionDetail';
+
 function AppRoutes() {
   const { user } = useContext(AuthContext);
   const isMobile = useIsMobile();
@@ -39,6 +42,8 @@ function AppRoutes() {
               <Route path="/create" element={<CreateRecipe />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/meal-plan" element={<MealPlanList />} />
+              <Route path="/recipes" element={<NutritionList />} />
+              <Route path="/recipes/:id" element={<NutritionDetail />} />
               <Route path="/favorites" element={<FavoriteRecipes />} />
 
               <Route path="/planner" element={<MealPlanner />} />

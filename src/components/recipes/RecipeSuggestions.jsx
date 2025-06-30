@@ -3,8 +3,9 @@ import { AuthContext } from "../auth/AuthContext";
 import RecipeItem from "./RecipeItem";
 import useIsMobile from "../../hooks/useIsMobile";
 import "./RecipeSuggestions.css";
+import RecipeDetail from "./RecipeDetail";
 
-export default function RecipeSuggestions() {
+export default function RecipeSuggestions({ onFavorite }) {
   const [suggestions, setSuggestions] = useState([]);
   const { user } = useContext(AuthContext);
   const isMobile = useIsMobile();
@@ -17,6 +18,10 @@ export default function RecipeSuggestions() {
   // Touch handling for mobile
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  // Add modal state and selected recipe at the top
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   useEffect(() => {
     if (!user) return;
@@ -165,6 +170,10 @@ export default function RecipeSuggestions() {
 
     // Update user preferences
     updateUserPreferences(recipe.category);
+
+    // Open modal
+    setSelectedRecipe(recipe);
+    setShowModal(true);
   };
 
   // Navigation methods
@@ -229,6 +238,20 @@ export default function RecipeSuggestions() {
     }
   };
 
+  const handleFavorite = async (id) => {
+    if (onFavorite) {
+      await onFavorite(id);
+
+      // update modal if open
+      if (selectedRecipe && selectedRecipe.id === id) {
+        const updated = JSON.parse(localStorage.getItem('recipes') || '[]')
+          .find(r => r.id === id);
+        if (updated) setSelectedRecipe(updated);
+      }
+    }
+  };
+
+
   return (
     <div className="suggestions-container">
       <div className="suggestions-header">
@@ -262,15 +285,15 @@ export default function RecipeSuggestions() {
               <div
                 key={recipe.id}
                 className="suggestion-slide"
-                onClick={() => handleRecipeClick(recipe)}
               >
                 <RecipeItem
                   recipe={recipe}
-                  onEdit={null}
-                  onDelete={null}
-                  onFavorite={null}
-                  onRate={null}
+                  onEdit={() => { }}
+                  onDelete={() => { }}
+                  onFavorite={() => handleRecipeClick(recipe)}
+                  onRate={() => handleRecipeClick(recipe)}
                   compact={true}
+                  onClick={() => handleRecipeClick(recipe)}
                 />
               </div>
             ))}
@@ -287,27 +310,25 @@ export default function RecipeSuggestions() {
       <div className="carousel-indicators">
         {isMobile
           ? // Mobile indicators show all slides
-            suggestions.map((_, index) => (
+          suggestions.map((_, index) => (
+            <button
+              key={index}
+              className={`indicator ${index === currentIndex ? "active" : ""
+                }`}
+              onClick={() => goToSlide(index)}
+            />
+          ))
+          : // Desktop indicators
+          Array.from({ length: Math.max(1, suggestions.length - 2) }).map(
+            (_, index) => (
               <button
                 key={index}
-                className={`indicator ${
-                  index === currentIndex ? "active" : ""
-                }`}
+                className={`indicator ${index === currentIndex ? "active" : ""
+                  }`}
                 onClick={() => goToSlide(index)}
               />
-            ))
-          : // Desktop indicators
-            Array.from({ length: Math.max(1, suggestions.length - 2) }).map(
-              (_, index) => (
-                <button
-                  key={index}
-                  className={`indicator ${
-                    index === currentIndex ? "active" : ""
-                  }`}
-                  onClick={() => goToSlide(index)}
-                />
-              )
-            )}
+            )
+          )}
       </div>
 
       {isMobile && (
@@ -321,6 +342,17 @@ export default function RecipeSuggestions() {
           💡 Tip: Your suggestions improve as you interact with more recipes!
         </p>
       </div>
+
+      {showModal && selectedRecipe && (
+        <RecipeDetail
+          recipe={selectedRecipe}
+          onEdit={() => { }}
+          onDelete={() => { }}
+          onFavorite={handleFavorite}
+          onRate={() => { }}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,210 @@
+/* === Base === */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f6f6f6;
+}
+
+.detail-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.loading {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* === Back Button === */
+.back-btn {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #4caf50;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 24px;
+}
+
+.back-btn:hover {
+  background: #6dc373;
+}
+
+/* === Header === */
+.recipe-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.recipe-header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  color: #2e7d32;
+}
+
+.recipe-category {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* === Grid Layout === */
+.recipe-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .recipe-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipe-main-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* === Image === */
+.recipe-image-container {
+  text-align: center;
+}
+
+.recipe-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* === Section Blocks === */
+.recipe-section {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-section h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #388e3c;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.ingredient-list {
+  padding-left: 20px;
+  line-height: 1.6;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.instructions {
+  background: #f4f4f4;
+  padding: 16px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #555;
+  overflow-x: auto;
+}
+
+/* === Nutrition Card === */
+.nutrition-info-card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+}
+
+.nutrition-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+.nutrition-header button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nutrition-header button:hover {
+  background: #43a047;
+}
+
+.serving-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.serving-input input {
+  width: 60px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Nutrient List */
+.nutrient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nutrient-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrient-label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 16px;
+  position: relative;
+}
+
+.progress {
+  background: #4caf50;
+  color: white;
+  height: 100%;
+  font-size: 0.75rem;
+  line-height: 16px;
+  text-align: center;
+  transition: width 0.3s ease;
+}

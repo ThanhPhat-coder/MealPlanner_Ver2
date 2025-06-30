@@ -2,12 +2,16 @@ import { useState, useEffect, useContext } from 'react';
 import RecipeForm from './RecipeForm';
 import RecipeItem from './RecipeItem';
 import RecipeSuggestions from './RecipeSuggestions';
+import RecipeDetail from './RecipeDetail';
 import { AuthContext } from '../auth/AuthContext';
 
 export default function RecipeList() {
     const [recipes, setRecipes] = useState(() => JSON.parse(localStorage.getItem('recipes')) || []);
     const [editing, setEditing] = useState(null);
     const { user } = useContext(AuthContext);
+    // Modal state
+    const [showModal, setShowModal] = useState(false);
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
 
     // Load from API
     useEffect(() => {
@@ -116,6 +120,10 @@ export default function RecipeList() {
             const updated = recipes.map(r => r.id === id ? data : r);
             setRecipes(updated);
             localStorage.setItem('recipes', JSON.stringify(updated));
+            // 👇 NEW: If modal is open and this is the selected recipe, update it
+            if (selectedRecipe?.id === id) {
+                setSelectedRecipe(data);
+            }
         } catch {
             alert('❌ Failed to update favorite');
         }
@@ -131,8 +139,10 @@ export default function RecipeList() {
 
     return (
         <>
-            <RecipeSuggestions />
-            
+            <RecipeSuggestions onFavorite={user ? toggleFavorite : null} />
+
+
+
             {editing && (
                 <div style={{ marginBottom: '20px', position: 'relative', border: '1px solid #ccc', padding: '10px' }}>
                     <h3>✏️ Editing: {editing.title}</h3>
@@ -168,11 +178,26 @@ export default function RecipeList() {
                         recipe={r}
                         onEdit={user ? setEditing : null}
                         onDelete={user ? deleteRecipe : null}
-                        onFavorite={user ? toggleFavorite : null} // ✅ FIX prop name
+                        onFavorite={user ? toggleFavorite : null}
                         onRate={user ? rateRecipe : null}
+                        onClick={() => {
+                            setSelectedRecipe(r);
+                            setShowModal(true);
+                        }}
                     />
                 ))}
             </div>
+
+            {showModal && selectedRecipe && (
+                <RecipeDetail
+                    recipe={selectedRecipe}
+                    onEdit={user ? setEditing : null}
+                    onDelete={user ? deleteRecipe : null}
+                    onFavorite={user ? toggleFavorite : null}
+                    onRate={user ? rateRecipe : null}
+                    onClose={() => setShowModal(false)}
+                />
+            )}
         </>
     );
 }
