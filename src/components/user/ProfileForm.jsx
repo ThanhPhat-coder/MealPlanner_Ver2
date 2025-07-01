@@ -169,7 +169,7 @@ export default function ProfileForm({ profile = {}, onUpdate }) {
 
     return (
         <div className="profile-layout">
-            <ToastContainer position="top-right" autoClose={2500} />
+            {/* <ToastContainer position="top-right" autoClose={2500} /> */}
 
             <aside className="profile-sidebar">
                 <h3>Settings</h3>
