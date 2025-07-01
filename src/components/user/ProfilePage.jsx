@@ -14,7 +14,7 @@ export default function ProfilePage() {
     );
 
     useEffect(() => {
-        fetch('http://localhost:3001/recipes')
+        fetch('https://my-json-server-d36m.onrender.com/recipes')
             .then(res => res.json())
             .then(data => setRecipes(data))
             .catch(() => {

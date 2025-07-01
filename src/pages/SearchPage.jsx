@@ -15,7 +15,7 @@ export default function SearchPage() {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:3001/recipes')
+        fetch('https://my-json-server-d36m.onrender.com/recipes')
             .then(res => res.json())
             .then(data => {
                 setRecipes(data);
@@ -91,7 +91,7 @@ export default function SearchPage() {
                             className="search-input"
                         />
                         {query && (
-                            <button 
+                            <button
                                 className="clear-search-btn"
                                 onClick={() => handleSearch('')}
                                 title="Clear search"
@@ -106,47 +106,47 @@ export default function SearchPage() {
                 <div className="filter-buttons">
                     <div className="filter-group">
                         <span className="filter-group-title">Sort:</span>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'newest' ? 'active' : ''}`}
                             onClick={() => handleSort('newest')}
                         >
                             📅 Newest
                         </button>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'a-z' ? 'active' : ''}`}
                             onClick={() => handleSort('a-z')}
                         >
                             🔤 A → Z
                         </button>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'z-a' ? 'active' : ''}`}
                             onClick={() => handleSort('z-a')}
                         >
                             🔤 Z → A
                         </button>
                     </div>
-                    
+
                     <div className="filter-group">
                         <span className="filter-group-title">Category:</span>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'breakfast' ? 'active' : ''}`}
                             onClick={() => handleSort('breakfast')}
                         >
                             🍳 Breakfast
                         </button>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'lunch' ? 'active' : ''}`}
                             onClick={() => handleSort('lunch')}
                         >
                             🥗 Lunch
                         </button>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'dinner' ? 'active' : ''}`}
                             onClick={() => handleSort('dinner')}
                         >
                             🍝 Dinner
                         </button>
-                        <button 
+                        <button
                             className={`filter-btn ${sortType === 'dessert' ? 'active' : ''}`}
                             onClick={() => handleSort('dessert')}
                         >
@@ -231,10 +231,10 @@ export default function SearchPage() {
             {showModal && selectedRecipe && (
                 <RecipeDetail
                     recipe={selectedRecipe}
-                    onEdit={() => {}}
-                    onDelete={() => {}}
-                    onFavorite={() => {}}
-                    onRate={() => {}}
+                    onEdit={() => { }}
+                    onDelete={() => { }}
+                    onFavorite={() => { }}
+                    onRate={() => { }}
                     onClose={() => setShowModal(false)}
                 />
             )}

@@ -17,7 +17,7 @@ export default function CreateRecipe() {
             comments: [],
         };
 
-        fetch('http://localhost:3001/recipes', {
+        fetch('https://my-json-server-d36m.onrender.com/recipes', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(recipeWithId) // bạn đang gửi `newRecipe`, sửa lại `recipeWithId`

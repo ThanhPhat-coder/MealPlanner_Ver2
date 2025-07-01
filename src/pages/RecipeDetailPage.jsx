@@ -13,7 +13,7 @@ export default function RecipeDetailPage() {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const res = await fetch(`http://localhost:3001/recipes/${id}`);
+                const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`);
                 if (res.ok) {
                     const recipeData = await res.json();
                     setRecipe(recipeData);
@@ -38,18 +38,18 @@ export default function RecipeDetailPage() {
 
     const handleDelete = async (recipe) => {
         if (!user) return;
-        
+
         if (window.confirm('Bạn có chắc chắn muốn xóa công thức này?')) {
             try {
-                await fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+                await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
                     method: 'DELETE'
                 });
-                
+
                 // Update localStorage
                 const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
                 const updatedRecipes = recipes.filter(r => r.id !== recipe.id);
                 localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
-                
+
                 navigate('/');
             } catch (error) {
                 console.error('Failed to delete recipe:', error);
@@ -59,20 +59,20 @@ export default function RecipeDetailPage() {
 
     const handleFavorite = async (recipeId) => {
         if (!user) return;
-        
+
         try {
             const updatedRecipe = { ...recipe, favorite: !recipe.favorite };
-            await fetch(`http://localhost:3001/recipes/${recipeId}`, {
+            await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedRecipe)
             });
-            
+
             setRecipe(updatedRecipe);
-            
+
             // Update localStorage
             const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-            const updatedRecipes = recipes.map(r => 
+            const updatedRecipes = recipes.map(r =>
                 r.id === recipeId ? updatedRecipe : r
             );
             localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
@@ -83,20 +83,20 @@ export default function RecipeDetailPage() {
 
     const handleRate = async (recipeId, rating) => {
         if (!user) return;
-        
+
         try {
             const updatedRecipe = { ...recipe, rating };
-            await fetch(`http://localhost:3001/recipes/${recipeId}`, {
+            await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedRecipe)
             });
-            
+
             setRecipe(updatedRecipe);
-            
+
             // Update localStorage
             const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-            const updatedRecipes = recipes.map(r => 
+            const updatedRecipes = recipes.map(r =>
                 r.id === recipeId ? updatedRecipe : r
             );
             localStorage.setItem('recipes', JSON.stringify(updatedRecipes));

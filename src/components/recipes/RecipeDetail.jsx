@@ -20,11 +20,11 @@ export default function RecipeDetail({ recipe, onEdit, onDelete, onFavorite, onR
             timestamp: new Date().toLocaleString(),
         };
 
-        const res = await fetch(`http://localhost:3001/recipes/${recipe.id}`);
+        const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${recipe.id}`);
         const recipeData = await res.json();
         const updatedComments = [...(recipeData.comments || []), newComment];
 
-        await fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+        await fetch(`https://my-json-server-d36m.onrender.com/recipes/${recipe.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...recipeData, comments: updatedComments })

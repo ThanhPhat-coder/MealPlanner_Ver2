@@ -11,7 +11,7 @@ export default function FavoriteRecipes() {
     const touchStartX = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/recipes')
+        fetch('https://my-json-server-d36m.onrender.com/recipes')
             .then(res => res.json())
             .then(data => {
                 setRecipes(data);
@@ -27,7 +27,7 @@ export default function FavoriteRecipes() {
         const updated = recipes.find(r => r.id === id);
         if (!updated) return;
         updated.favorite = !updated.favorite;
-        const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+        const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updated)
@@ -40,7 +40,7 @@ export default function FavoriteRecipes() {
         const updated = recipes.find(r => r.id === id);
         if (!updated) return;
         updated.pinned = !updated.pinned;
-        const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+        const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updated)
@@ -53,7 +53,7 @@ export default function FavoriteRecipes() {
         const updated = recipes.find(r => r.id === id);
         if (!updated) return;
         updated.rating = rating;
-        const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+        const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updated)
@@ -108,23 +108,23 @@ export default function FavoriteRecipes() {
     };
 
     return (
-        <div style={{ 
-            padding: '20px', 
-            fontFamily: '"Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif', 
-            minHeight: '100vh' 
+        <div style={{
+            padding: '20px',
+            fontFamily: '"Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+            minHeight: '100vh'
         }}>
             {/* Header Controls */}
             <div style={{
-                display: 'flex', 
-                justifyContent: 'space-between', 
+                display: 'flex',
+                justifyContent: 'space-between',
                 alignItems: 'center',
                 background: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(10px)',
-                padding: '16px 24px', 
+                padding: '16px 24px',
                 borderRadius: '16px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
+                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
                 marginBottom: '32px',
-                flexWrap: 'wrap', 
+                flexWrap: 'wrap',
                 gap: '16px',
                 border: '1px solid rgba(255, 255, 255, 0.2)'
             }}>
@@ -137,30 +137,30 @@ export default function FavoriteRecipes() {
                         color: '#666',
                         fontSize: '16px'
                     }}>🔍</div>
-                    <input 
-                        type="text" 
-                        placeholder="Search recipes..." 
-                        value={searchQuery} 
+                    <input
+                        type="text"
+                        placeholder="Search recipes..."
+                        value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        style={{ 
-                            padding: '12px 12px 12px 36px', 
-                            borderRadius: '12px', 
-                            border: '2px solid #e1e5e9', 
+                        style={{
+                            padding: '12px 12px 12px 36px',
+                            borderRadius: '12px',
+                            border: '2px solid #e1e5e9',
                             width: '100%',
                             fontSize: '14px',
                             transition: 'border-color 0.2s ease',
                             outline: 'none'
-                        }} 
+                        }}
                         onFocus={(e) => e.target.style.borderColor = '#667eea'}
                         onBlur={(e) => e.target.style.borderColor = '#e1e5e9'}
                     />
                 </div>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                    <select 
-                        value={sortOption} 
-                        onChange={(e) => setSortOption(e.target.value)} 
-                        style={{ 
-                            padding: '12px 16px', 
+                    <select
+                        value={sortOption}
+                        onChange={(e) => setSortOption(e.target.value)}
+                        style={{
+                            padding: '12px 16px',
                             borderRadius: '12px',
                             border: '2px solid #e1e5e9',
                             fontSize: '14px',
@@ -172,11 +172,11 @@ export default function FavoriteRecipes() {
                         <option value="rating">⭐ Rating</option>
                         <option value="time">⏰ Time</option>
                     </select>
-                    <select 
-                        value={categoryFilter} 
-                        onChange={(e) => setCategoryFilter(e.target.value)} 
-                        style={{ 
-                            padding: '12px 16px', 
+                    <select
+                        value={categoryFilter}
+                        onChange={(e) => setCategoryFilter(e.target.value)}
+                        style={{
+                            padding: '12px 16px',
                             borderRadius: '12px',
                             border: '2px solid #e1e5e9',
                             fontSize: '14px',
@@ -191,22 +191,22 @@ export default function FavoriteRecipes() {
             </div>
 
             {/* Recipe Cards Grid */}
-            <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
-                gap: '24px' 
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                gap: '24px'
             }}>
                 {filteredRecipes.map(r => (
-                    <div 
-                        key={r.id} 
-                        onClick={() => setSelectedRecipe(r)} 
+                    <div
+                        key={r.id}
+                        onClick={() => setSelectedRecipe(r)}
                         style={{
-                            cursor: 'pointer', 
-                            borderRadius: '20px', 
+                            cursor: 'pointer',
+                            borderRadius: '20px',
                             overflow: 'hidden',
-                            background: 'white', 
+                            background: 'white',
                             boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', 
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                             position: 'relative',
                             transform: 'translateY(0)',
                             border: '1px solid rgba(255, 255, 255, 0.2)'
@@ -222,15 +222,15 @@ export default function FavoriteRecipes() {
                     >
                         {/* Recipe Image */}
                         <div style={{ position: 'relative', overflow: 'hidden' }}>
-                            <img 
-                                src={r.image} 
-                                alt={r.title} 
-                                style={{ 
-                                    width: '100%', 
-                                    height: '200px', 
+                            <img
+                                src={r.image}
+                                alt={r.title}
+                                style={{
+                                    width: '100%',
+                                    height: '200px',
                                     objectFit: 'cover',
                                     transition: 'transform 0.3s ease'
-                                }} 
+                                }}
                             />
                             {/* Gradient overlay */}
                             <div style={{
@@ -241,16 +241,16 @@ export default function FavoriteRecipes() {
                                 bottom: 0,
                                 background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)'
                             }} />
-                            
+
                             {/* Pin Button */}
-                            <button 
-                                onClick={(e) => { e.stopPropagation(); togglePin(r.id); }} 
-                                style={{ 
-                                    position: 'absolute', 
-                                    top: '12px', 
-                                    left: '12px', 
-                                    background: r.pinned ? 'rgba(255, 193, 7, 0.9)' : 'rgba(255, 255, 255, 0.8)', 
-                                    border: 'none', 
+                            <button
+                                onClick={(e) => { e.stopPropagation(); togglePin(r.id); }}
+                                style={{
+                                    position: 'absolute',
+                                    top: '12px',
+                                    left: '12px',
+                                    background: r.pinned ? 'rgba(255, 193, 7, 0.9)' : 'rgba(255, 255, 255, 0.8)',
+                                    border: 'none',
                                     borderRadius: '8px',
                                     width: '36px',
                                     height: '36px',
@@ -266,14 +266,14 @@ export default function FavoriteRecipes() {
                             </button>
 
                             {/* Remove from Favorites Button */}
-                            <button 
-                                onClick={(e) => { e.stopPropagation(); toggleFavorite(r.id); }} 
-                                style={{ 
-                                    position: 'absolute', 
-                                    top: '12px', 
-                                    right: '12px', 
-                                    background: 'rgba(220, 53, 69, 0.9)', 
-                                    border: 'none', 
+                            <button
+                                onClick={(e) => { e.stopPropagation(); toggleFavorite(r.id); }}
+                                style={{
+                                    position: 'absolute',
+                                    top: '12px',
+                                    right: '12px',
+                                    background: 'rgba(220, 53, 69, 0.9)',
+                                    border: 'none',
                                     borderRadius: '8px',
                                     width: '36px',
                                     height: '36px',
@@ -289,11 +289,11 @@ export default function FavoriteRecipes() {
                                 <span style={{ fontSize: '16px', color: 'white' }}>🗑️</span>
                             </button>
                         </div>
-                        
+
                         {/* Card Content */}
                         <div style={{ padding: '20px' }}>
-                            <h3 style={{ 
-                                margin: '0 0 12px 0', 
+                            <h3 style={{
+                                margin: '0 0 12px 0',
                                 fontSize: '18px',
                                 fontWeight: '600',
                                 color: '#2c3e50',
@@ -301,11 +301,11 @@ export default function FavoriteRecipes() {
                             }}>
                                 {r.title}
                             </h3>
-                            
+
                             {/* Recipe Info */}
-                            <div style={{ 
-                                display: 'flex', 
-                                alignItems: 'center', 
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
                                 gap: '16px',
                                 marginBottom: '16px',
                                 fontSize: '14px',
@@ -320,12 +320,12 @@ export default function FavoriteRecipes() {
                                     <span>{r.servings} servings</span>
                                 </div>
                             </div>
-                            
+
                             {/* Rating */}
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <RatingStars rating={r.rating} />
-                                <span style={{ 
-                                    fontSize: '14px', 
+                                <span style={{
+                                    fontSize: '14px',
                                     color: '#95a5a6',
                                     fontWeight: '500'
                                 }}>
@@ -354,12 +354,12 @@ export default function FavoriteRecipes() {
             {selectedRecipe && (
                 <div style={overlayStyle} onClick={() => setSelectedRecipe(null)}>
                     <div style={modalStyle} onClick={e => e.stopPropagation()}>
-                        <button onClick={() => setSelectedRecipe(null)} style={{ 
-                            position: 'absolute', 
-                            top: '16px', 
-                            right: '16px', 
-                            fontSize: '24px', 
-                            background: 'none', 
+                        <button onClick={() => setSelectedRecipe(null)} style={{
+                            position: 'absolute',
+                            top: '16px',
+                            right: '16px',
+                            fontSize: '24px',
+                            background: 'none',
                             border: 'none',
                             cursor: 'pointer',
                             color: '#666',
@@ -371,9 +371,9 @@ export default function FavoriteRecipes() {
                             borderRadius: '8px',
                             transition: 'background-color 0.2s ease'
                         }}>×</button>
-                        
-                        <h2 style={{ 
-                            marginBottom: '24px', 
+
+                        <h2 style={{
+                            marginBottom: '24px',
                             fontSize: '28px',
                             fontWeight: '700',
                             color: '#2c3e50',
@@ -382,9 +382,9 @@ export default function FavoriteRecipes() {
                             {selectedRecipe.title}
                         </h2>
 
-                        <div style={{ 
-                            display: 'flex', 
-                            justifyContent: 'center', 
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'center',
                             marginBottom: '24px',
                             gap: '8px'
                         }}>
@@ -416,11 +416,11 @@ export default function FavoriteRecipes() {
                             onTouchStart={handleSwipeStart}
                             onTouchEnd={handleSwipeEnd}
                             className={`tab-content ${getSlideDirection()}`}
-                            style={{ 
-                                minHeight: '200px', 
-                                transition: 'all 0.3s ease-in-out', 
-                                padding: '24px', 
-                                borderRadius: '16px', 
+                            style={{
+                                minHeight: '200px',
+                                transition: 'all 0.3s ease-in-out',
+                                padding: '24px',
+                                borderRadius: '16px',
                                 background: '#f8f9fa',
                                 border: '1px solid #e9ecef'
                             }}
@@ -439,14 +439,14 @@ export default function FavoriteRecipes() {
                                             boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
                                             border: '1px solid #e9ecef'
                                         }}>
-                                            <input 
-                                                type="checkbox" 
-                                                style={{ 
+                                            <input
+                                                type="checkbox"
+                                                style={{
                                                     marginRight: '12px',
                                                     width: '18px',
                                                     height: '18px',
                                                     cursor: 'pointer'
-                                                }} 
+                                                }}
                                             />
                                             <span>{item}</span>
                                         </li>
@@ -494,9 +494,9 @@ export default function FavoriteRecipes() {
                                     <h4 style={{ marginBottom: '20px', fontSize: '18px', color: '#2c3e50' }}>
                                         Rate this recipe
                                     </h4>
-                                    <RatingStars 
-                                        rating={selectedRecipe.rating} 
-                                        onRate={(r) => handleRating(selectedRecipe.id, r)} 
+                                    <RatingStars
+                                        rating={selectedRecipe.rating}
+                                        onRate={(r) => handleRating(selectedRecipe.id, r)}
                                     />
                                     <p style={{ marginTop: '16px', color: '#7f8c8d' }}>
                                         {selectedRecipe.rating ? `You rated ${selectedRecipe.rating}/5 stars` : 'Click stars to rate'}
@@ -529,25 +529,25 @@ export default function FavoriteRecipes() {
 }
 
 const overlayStyle = {
-    position: 'fixed', 
-    top: 0, 
-    left: 0, 
-    right: 0, 
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.6)', 
-    display: 'flex', 
-    alignItems: 'center', 
-    justifyContent: 'center', 
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     zIndex: 999,
     backdropFilter: 'blur(8px)'
 };
 
 const modalStyle = {
-    background: 'white', 
-    padding: '32px', 
-    borderRadius: '24px', 
-    maxWidth: '700px', 
-    width: '90%', 
+    background: 'white',
+    padding: '32px',
+    borderRadius: '24px',
+    maxWidth: '700px',
+    width: '90%',
     position: 'relative',
     maxHeight: '80vh',
     overflowY: 'auto',

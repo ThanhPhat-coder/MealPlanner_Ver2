@@ -28,7 +28,7 @@ export default function RecipeSuggestions({ onFavorite }) {
 
     const fetchSuggestions = async () => {
       try {
-        const res = await fetch("http://localhost:3001/recipes");
+        const res = await fetch("https://my-json-server-d36m.onrender.com/recipes");
         const allRecipes = await res.json();
 
         // Lấy user preferences từ localStorage

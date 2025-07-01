@@ -39,7 +39,7 @@ export default function RecipeList() {
             };
 
             try {
-                const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+                const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ export default function RecipeList() {
             };
 
             try {
-                const res = await fetch('http://localhost:3001/recipes', {
+                const res = await fetch('https://my-json-server-d36m.onrender.com/recipes', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newRecipe)
@@ -89,7 +89,7 @@ export default function RecipeList() {
     };
 
     const deleteRecipe = (recipe) => {
-        fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+        fetch(`https://my-json-server-d36m.onrender.com/recipes/${recipe.id}`, {
             method: 'DELETE'
         })
             .then(() => {
@@ -108,7 +108,7 @@ export default function RecipeList() {
         const updatedRecipe = { ...target, favorite: updatedFavorite };
 
         try {
-            const res = await fetch(`http://localhost:3001/recipes/${id}`, {
+            const res = await fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedRecipe)

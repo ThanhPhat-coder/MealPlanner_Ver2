@@ -9,7 +9,7 @@ export default function RecipeDetailPage() {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/recipes/${id}`)
+    fetch(`https://my-json-server-d36m.onrender.com/recipes/${id}`)
       .then(res => res.json())
       .then(setRecipe)
       .catch(() => alert("❌ Failed to load recipe"));
