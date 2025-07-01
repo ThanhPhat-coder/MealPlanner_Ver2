@@ -1,4 +1,3 @@
-/** RecipeForm.jsx - Professional UI Update */
 import { useState, useEffect } from 'react';
 
 export default function RecipeForm({ onSave, editRecipe }) {
@@ -6,6 +5,7 @@ export default function RecipeForm({ onSave, editRecipe }) {
         title: '', description: '', ingredients: '', instructions: '',
         time: '', servings: '', category: 'Breakfast', image: ''
     });
+    const [localImage, setLocalImage] = useState('');
 
     useEffect(() => {
         if (editRecipe) {
@@ -15,11 +15,24 @@ export default function RecipeForm({ onSave, editRecipe }) {
                     ? editRecipe.ingredients.join(', ')
                     : editRecipe.ingredients
             });
+            setLocalImage(editRecipe.image || '');
         }
     }, [editRecipe]);
 
     const handleChange = (field, value) => {
         setRecipe(prev => ({ ...prev, [field]: value }));
+    };
+
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setLocalImage(reader.result);
+                setRecipe(prev => ({ ...prev, image: reader.result }));
+            };
+            reader.readAsDataURL(file);
+        }
     };
 
     const handleSubmit = (e) => {
@@ -33,6 +46,7 @@ export default function RecipeForm({ onSave, editRecipe }) {
             title: '', description: '', ingredients: '', instructions: '',
             time: '', servings: '', category: 'Breakfast', image: ''
         });
+        setLocalImage('');
     };
 
     return (
@@ -51,8 +65,23 @@ export default function RecipeForm({ onSave, editRecipe }) {
                         placeholder="Paste image URL here"
                         style={styles.input}
                     />
+
+                    <label style={styles.uploadButton}>
+                        Upload from device
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            style={{ display: 'none' }}
+                        />
+                    </label>
+
                     {recipe.image && (
-                        <img src={recipe.image} alt="Preview" style={styles.image} />
+                        <img
+                            src={recipe.image}
+                            alt="Preview"
+                            style={styles.image}
+                        />
                     )}
                 </div>
 
@@ -176,6 +205,9 @@ const styles = {
     left: {
         flex: '1 1 240px',
         minWidth: '240px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px',
     },
     right: {
         flex: '1 1 580px',
@@ -234,6 +266,19 @@ const styles = {
         fontSize: '1rem',
         fontWeight: 'bold',
         cursor: 'pointer',
+        transition: 'background-color 0.3s ease',
+    },
+    uploadButton: {
+        display: 'inline-block',
+        marginTop: '10px',
+        padding: '10px 16px',
+        backgroundColor: '#4CAF50',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        textAlign: 'center',
+        fontSize: '0.95rem',
         transition: 'background-color 0.3s ease',
     },
 };
