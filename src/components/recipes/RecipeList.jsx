@@ -59,7 +59,12 @@ export default function RecipeList() {
                 alert("❌ Failed to update recipe: " + error.message);
             }
         } else {
+            // 👉 Auto-increment id
+            const maxId = Math.max(...recipes.map(r => parseInt(r.id) || 0), 0);
+            const newId = maxId + 1;
+
             const newRecipe = {
+                id: newId,
                 ...recipe,
                 authorEmail: user.email,
                 authorUsername: user.username,

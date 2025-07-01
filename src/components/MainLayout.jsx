@@ -100,7 +100,7 @@ export default function MainLayout({ children }) {
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">➕</span>
-                            <span>Add Recipe</span>
+                            <span>Add</span>
                         </Link>
                         <Link
                             to="/search"
@@ -132,7 +132,7 @@ export default function MainLayout({ children }) {
                             onClick={closeMenu}
                         >
                             <span className="nav-icon">📅</span>
-                            <span>Meal Planner</span>
+                            <span>Planning</span>
                         </Link>
                     </div>
 

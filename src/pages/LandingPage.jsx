@@ -21,7 +21,7 @@ export default function LandingPage() {
                 <div className="logo">🍳 MyRecipes</div>
                 <nav className="landing-nav">
                     <Link to="/login" className="btn login">Login</Link>
-                    <Link to="/register" className="btn signup">Sign Up</Link>
+                    <Link to="/login" className="btn signup">Sign Up</Link>
                 </nav>
             </header>
 
@@ -126,7 +126,7 @@ export default function LandingPage() {
 
                 <section className="cta" data-aos="zoom-in-up">
                     <h2>Ready to Cook Something Amazing?</h2>
-                    <Link to="/register" className="btn cta-btn">Join Now</Link>
+                    <Link to="/login" className="btn cta-btn">Join Now</Link>
                 </section>
             </main>
 
