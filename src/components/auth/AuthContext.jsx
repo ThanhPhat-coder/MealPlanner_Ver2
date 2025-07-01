@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
@@ -28,8 +28,23 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('user');
     };
 
+    const updateUser = (newData) => {
+        if (!user) return;
+        const updated = { ...user, ...newData };
+        setUser(updated);
+        localStorage.setItem('user', JSON.stringify(updated));
+
+        // Update user in users list
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const index = users.findIndex(u => u.email === user.email);
+        if (index !== -1) {
+            users[index] = updated;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{ user, login, register, logout }}>
+        <AuthContext.Provider value={{ user, login, register, logout, updateUser }}>
             {children}
         </AuthContext.Provider>
     );

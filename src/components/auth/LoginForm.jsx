@@ -14,6 +14,7 @@ export default function LoginForm() {
     const [form, setForm] = useState({
         username: '', email: '', password: '', profilePic: ''
     });
+    const [localImage, setLocalImage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -58,10 +59,21 @@ export default function LoginForm() {
         setError('');
     };
 
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setLocalImage(reader.result);
+                setForm({ ...form, profilePic: reader.result });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     return (
         <div style={styles.page}>
             <div style={styles.card}>
-                {/* Left banner */}
                 <div style={styles.banner}>
                     <div style={styles.bannerOverlay}></div>
                     <div style={styles.bannerContent}>
@@ -72,15 +84,12 @@ export default function LoginForm() {
                     </div>
                 </div>
 
-                {/* Right form */}
                 <form style={styles.form} onSubmit={handleSubmit}>
-                    {/* Tabs */}
                     <div style={styles.tabs}>
                         <TabButton label="Login" active={mode === 'login'} onClick={() => setMode('login')} />
                         <TabButton label="Register" active={mode === 'register'} onClick={() => setMode('register')} />
                     </div>
 
-                    {/* Title */}
                     <h2 style={styles.title}>
                         {isRegister ? 'Create Account' : 'Welcome Back'}
                     </h2>
@@ -88,7 +97,6 @@ export default function LoginForm() {
                         {isRegister ? 'Join the cooking community!' : 'Login to your account'}
                     </p>
 
-                    {/* Form fields */}
                     <div style={styles.fieldGroup}>
                         {isRegister && (
                             <InputField
@@ -114,18 +122,37 @@ export default function LoginForm() {
                             onChange={(e) => setForm({ ...form, password: e.target.value })}
                         />
                         {isRegister && (
-                            <InputField
-                                icon={<FaImage />}
-                                placeholder="Profile Picture URL (optional)"
-                                onChange={(e) => setForm({ ...form, profilePic: e.target.value })}
-                            />
+                            <div style={styles.uploadGroup}>
+                                <InputField
+                                    icon={<FaImage />}
+                                    placeholder="Profile Picture URL (optional)"
+                                    onChange={(e) => setForm({ ...form, profilePic: e.target.value })}
+                                />
+
+                                <label style={styles.uploadLabel}>
+                                    <FaImage style={{ marginRight: '8px' }} />
+                                    Upload from device
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={handleImageUpload}
+                                        style={{ display: 'none' }}
+                                    />
+                                </label>
+
+                                {localImage && (
+                                    <img
+                                        src={localImage}
+                                        alt="Preview"
+                                        style={styles.previewImage}
+                                    />
+                                )}
+                            </div>
                         )}
                     </div>
 
-                    {/* Error */}
                     {error && <p style={styles.error}>{error}</p>}
 
-                    {/* Submit */}
                     <button type="submit" style={styles.button}>
                         {isRegister ? 'Register' : 'Login'}
                     </button>
@@ -312,5 +339,28 @@ const styles = {
         borderRadius: '10px',
         fontSize: '0.95rem',
         textAlign: 'center',
+    },
+    uploadGroup: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px',
+    },
+    uploadLabel: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        padding: '10px 16px',
+        backgroundColor: '#e8f5e9',
+        color: '#2e7d32',
+        borderRadius: '10px',
+        cursor: 'pointer',
+        fontSize: '0.95rem',
+        border: '1px solid #c8e6c9',
+        transition: 'background 0.3s ease',
+    },
+    previewImage: {
+        maxWidth: '160px',
+        borderRadius: '12px',
+        marginTop: '8px',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
     },
 };

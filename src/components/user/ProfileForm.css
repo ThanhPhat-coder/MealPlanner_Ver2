@@ -270,3 +270,25 @@ textarea {
 }
 
 /* Dark Mode */
+
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: 1px solid #c8e6c9;
+    transition: background 0.3s ease;
+    gap: 6px;
+}
+
+.upload-button:hover {
+    background-color: #d0e9d4;
+}
+
+.upload-button input[type="file"] {
+    display: none;
+}

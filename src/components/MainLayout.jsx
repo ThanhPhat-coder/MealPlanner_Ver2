@@ -115,7 +115,7 @@ export default function MainLayout({ children }) {
                             className={`nav-link ${isActive('/recipes') ? 'active' : ''}`}
                             onClick={closeMenu}
                         >
-                            <span className="nav-icon">❤️</span>
+                            <span className="nav-icon"> 📜 </span>
                             <span>Recipes</span>
                         </Link>
                         <Link

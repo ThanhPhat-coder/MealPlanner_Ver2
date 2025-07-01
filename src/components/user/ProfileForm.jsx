@@ -11,7 +11,8 @@ import {
     FaSave,
     FaEnvelope,
     FaBell,
-    FaPen
+    FaPen,
+    FaUpload
 } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
 import './ProfileForm.css';
@@ -28,6 +29,7 @@ const menuItems = [
 export default function ProfileForm({ profile = {}, onUpdate }) {
     const [activeTab, setActiveTab] = useState('profile');
     const [form, setForm] = useState(profile);
+    const [localImage, setLocalImage] = useState('');
 
     const handleSave = (e) => {
         e.preventDefault();
@@ -35,27 +37,50 @@ export default function ProfileForm({ profile = {}, onUpdate }) {
         toast.success('✅ Profile saved successfully!');
     };
 
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setLocalImage(reader.result);
+                setForm({ ...form, picture: reader.result });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     const renderContent = () => {
         switch (activeTab) {
             case 'profile':
                 return (
                     <div className="profile-row-horizontal">
-                        {/* Avatar bên trái */}
                         <div className="profile-avatar-box">
                             <img
-                                src={form.picture || 'https://via.placeholder.com/150'}
+                                src={form.picture || localImage || 'https://via.placeholder.com/150'}
                                 alt="avatar"
                                 className="avatar-img"
                             />
+
                             <input
                                 type="text"
                                 placeholder="Image URL"
                                 value={form.picture || ''}
                                 onChange={(e) => setForm({ ...form, picture: e.target.value })}
+                                className="avatar-url-input"
                             />
+
+                            <label className="upload-button">
+                                <FaUpload style={{ marginRight: '6px' }} />
+                                Upload from device
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageUpload}
+                                    style={{ display: 'none' }}
+                                />
+                            </label>
                         </div>
 
-                        {/* Thông tin bên phải */}
                         <div className="profile-info-box">
                             <div className="form-row">
                                 <FaUser className="icon" />
