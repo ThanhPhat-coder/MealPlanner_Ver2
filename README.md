@@ -8,4 +8,7 @@ Step 3: Log in, register an account and experience
 Link:
 Github: https://github.com/ThanhPhat-coder/MealPlanner_Ver2.git
 Website: https://myrecipes-app.vercel.app/
+Json-server: running json-server instance with test data
+    +  https://my-json-server-d36m.onrender.com/recipes
+
 !!! The package is free so the website will work well from 15 - 30 days from the date of reporting -->
