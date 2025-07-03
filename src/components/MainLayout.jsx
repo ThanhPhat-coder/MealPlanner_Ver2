@@ -66,7 +66,7 @@ export default function MainLayout({ children }) {
             <header className="navbar">
                 <div className="navbar-brand">
                     <Link to="/" className="logo" onClick={closeMenu}>
-                        <span className="logo-icon">🍳</span>
+                        <span className="logo-icon">🍀</span>
                         <span className="logo-text">MyRecipes</span>
                     </Link>
                     <div className="page-indicator">
